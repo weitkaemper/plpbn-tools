@@ -1,0 +1,18 @@
+0.3 :: head :-
+    body1,
+    body2.
+
+body1.
+
+body2 :-
+    body1.
+
+0.2 :: head(X) :-
+    body(X).
+
+body(3).
+
+0.8 :: head.
+
+
+
