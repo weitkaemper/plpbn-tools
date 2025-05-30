@@ -20,7 +20,7 @@ oriented_edge(X,Y) :-
 oriented_edge(X,Y) :-
 	chain_orientation(X,Y).
 oriented_edge(X,Y) :-
-	implements_protocol(_Graph_,symm_graphp),
+	conforms_to_protocol(_Graph_,symm_graphp),
 	symmetry_orientation(X,Y).
 oriented_edge(X,Y) :-
 	cycle_orientation(X,Y).
