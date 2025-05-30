@@ -1,4 +1,4 @@
-:- object(object_writer).
+:- object(entity_writer).
 :- public([write_object/4,write_object/5, write_protocol/4, write_protocol/3, write_entities/2]).
 
 :- uses(format,[format/3]).
