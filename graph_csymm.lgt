@@ -1,4 +1,4 @@
-:- object(graph_csymm(_PLP_,_DB_), extends(graph_psymm(_PLP_,_DB_)),implements(symm_graphp)).
+:- object(graph_csymm(_PLP_,_DB_), extends(graph_psymm(_PLP_,_DB_))).
 
 symmetry(W,X,Y,Z) :-
 	^^edge(W,X,C1),
