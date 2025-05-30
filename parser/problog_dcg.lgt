@@ -114,7 +114,7 @@ probrule(H,P,B) :-
 write_plp :-
     decompose_file_name(_File_, _, Name, _),
     plp_from_file(Rules),
-    object_writer::write_object(Name, [implements(plpp)], [], Rules).
+    entity_writer::write_object(Name, [implements(plpp)], [], Rules).
 
 % Load file and parse it into rules
 plp_from_file(Rules) :-
