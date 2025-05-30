@@ -15,7 +15,11 @@ To compute the orientable edges of a graph `test1` according to the PC algorithm
 
 To compute the ground graph arising from a relational probabilistic logic program `cora` and database `cora_db`, call `graph(cora,cora_db)::edge(X,Y)` (returns all edges on backtracking).
 
-To compute the probabilistic logic program in our internal format from a (simple) Problog program file `problog_test.plp` contained in your current directory, call `problog_dcg('problog_test.plp')::probrule(Head, Prob, Body)` (returns all probabilistic rules on backtracking).
+To compute the probabilistic logic program in our internal format from a (simple) Problog program file `problog_test.plp` contained in your current directory, call `plp(problog_dcg,'problog_test.plp')::probrule(Head, Prob, Body)` (returns all probabilistic rules on backtracking).
+
+`plp(problog_dcg,'problog_test.plp')::create_entities` creates dynamic objects for the plp, the corresponding database protocol and the concrete database;
+`plp(problog_dcg,'problog_test.plp')::write_entities` writes those to a file called `problog_test.lgt`. 
+
 
 Parametric objects can be combined freely; for instance, `oriented(graph(cora,cora_db))::edge(X,Y)` orients the edges induced by  `cora` and `cora_db`.   
 
@@ -25,6 +29,8 @@ Parametric objects can be combined freely; for instance, `oriented(graph(cora,co
 `graphp`: Declares `edge/2` as an arc relation in a graph.
 
 `plpp`: Declares `probrule/3` representing probabilistic rules.  
+
+`parserp`: Declares plp_rules/3, which takes a list of character codes as input and returns both probabilistic and deterministic rules encoded therein.
 
 ### Protocols specifically for graphs arising from grounding relational programs 
 `cond_graphp`: Extends `graphp` and declares `edge/3`, which tracks a condition leading to the arc in its third argument.
@@ -43,16 +49,14 @@ Parametric objects can be combined freely; for instance, `oriented(graph(cora,co
 
 `graph_csymm(PLP,DB)`: Parametric object extending `graph_psymm(PLP,DB)` and overriding symmetry/4. In addition to the conditions of `graph_psymm(PLP,DB)`, it also requires the conditions to share the same functors. 
 
-### Parsers 
-
-`problog_dcg(_File_)` \[contained in problog_dcg.lgt]: A parametric object which takes a file as a parameter and implements `plpp`. A rudimentary ProbLog parser, it reads a file in ProbLog notation which consists only of clauses of the form `P :: H :- B` with a float `P`, a clause head `H` and a clause body `B`. It does deal with formatting as well as comments starting with `%` and ending in a newline, but not with more sophisticated constructs.
+`plp(_Parser, _File_)` : A parametric object which takes a parser and a file as a parameter and implements `plpp`. It also provides various predicates for creating the plp, the corresponding database protocol and the concrete database as dynamic entities, and for writing those entities to files. 
 
 ### General utilities 
 `term_reader`: Uses conditional compilation to provide a more robust alternative to the LogTalk library predicate `term_io::read_from_codes/2` with SWI, XSB and YAP, while falling back to the library predicate with other backends. 
 
 `entity_writer`: Provides predicates to write LogTalk entities to file, mirroring LogTalk built-ins for creating dynamic entities such as `create_object/4` and `create_protocol/3`. 
 
-### Specific utilities 
-`problog_dcg`: The underlying definite clause grammar supporting the parsing in `problog_dcg(_File_)`. 
+### Parsers 
+`problog_dcg`: A rudimentary ProbLog parser, it reads a file in ProbLog notation which consists only of clauses of the form `P :: H :- B` with a float `P`, a clause head `H` and a clause body `B`. It does deal with formatting as well as comments starting with `%` and ending in a newline, but not with more sophisticated constructs. 
 
 
