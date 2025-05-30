@@ -12,7 +12,7 @@
 :- use_module(library(lists),[append/3]).
 :- endif.
 
-%:- table plp_rules/2.
+:- table plp_rules/2.
 
 plp_rules(Rules, Codes) :-
     phrase(plp_rules(Rules), Codes).
@@ -104,7 +104,7 @@ conj_to_list(A, [A]).
 :- endif.
 
 
-%:- table plp_from_file/1.
+:- table plp_from_file/1.
 
 probrule(H,P,B) :-
     plp_from_file(Rules),
