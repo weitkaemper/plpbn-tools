@@ -9,7 +9,7 @@ Facts are stored in a (deductive) *database*, which provides external predicates
 The predicates that are to be supplied from a database should be specified in a protocol specific to the probabilistic logic program; see files `cora.lgt` (contains program and protocol) and `cora_db.lgt` for a complete example.
 
 ## Usage
-The core tools are loaded by calling `{loader}`. To use the parser, call `{parser_loader}`. The supplied examples can be called using `{example_loader}`.
+The core tools are loaded by calling `{loader}`. To use the parser, call `{parser_loader}`. The supplied examples can be loaded using `{example_loader}`.
 
 To compute the orientable edges of a graph `test1` according to the PC algorithm, call `oriented(test1)::edge(X,Y)` (returns all orientable edges on backtracking).
 
