@@ -5,12 +5,7 @@
 
 :- uses(reader,[file_to_codes/2]).
 :- uses(os, [decompose_file_name/4]).
-
-:- if(current_logtalk_flag(prolog_dialect, xsb)).
-:- use_module(basics,[member/2]).
-:- elif(current_logtalk_flag(prolog_dialect, swi)).
-:- use_module(library(lists),[member/2]).
-:- endif.
+:- uses(list, [member/2]).
 
 
 :- table plp_from_file/2.

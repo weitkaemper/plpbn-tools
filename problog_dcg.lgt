@@ -3,12 +3,7 @@
 :- uses(blank_grammars(codes),[blank//0, blanks//0]).
 :- uses(number_grammars(codes),[float//1]).
 :- uses(term_reader,[read_from_codes/2]).
-
-:- if(current_logtalk_flag(prolog_dialect, xsb)).
-:- use_module(basics,[append/3]).
-:- elif(current_logtalk_flag(prolog_dialect, swi)).
-:- use_module(library(lists),[append/3]).
-:- endif.
+:- uses(list,[append/3]).
 
 :- table plp_rules/3.
 

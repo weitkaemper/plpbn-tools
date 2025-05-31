@@ -1,13 +1,11 @@
 :- object(graph(_PLP_,_DB_),implements(cond_graphp)).
-:- if(current_logtalk_flag(prolog_dialect, xsb)).
-:- use_module(basics,[member/2]).
-:- elif(current_logtalk_flag(prolog_dialect, swi)).
-:- use_module(library(lists),[member/2]).
-:- endif.
+
+:- protected(atom_of/2).
+
+:- uses(list, member).
 
 :- table condrule/3.
 
-:- protected(atom_of/2).
 
 condrule(X,Y,C) :-
 	_PLP_::probrule(X,_,Body),
