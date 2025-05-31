@@ -2,7 +2,7 @@
 
 :- protected(atom_of/2).
 
-:- uses(list, member).
+:- uses(list, [member/2]).
 
 :- table condrule/3.
 
