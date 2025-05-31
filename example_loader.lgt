@@ -1,3 +1,3 @@
 :- object(example_loader).
-:- initialization(logtalk_load(['examples/cora.lgt', 'examples/cora_db.lgt', 'examples/uwcse1.lgt', 'examples/uwcse1_db.lgt', 'examples/uwcse1_db2.lgt'])).
+:- initialization(logtalk_load([test1, test2, 'examples/cora.lgt', 'examples/cora_db.lgt', 'examples/uwcse1.lgt', 'examples/uwcse1_db.lgt', 'examples/uwcse1_db2.lgt'])).
 :- end_object.
