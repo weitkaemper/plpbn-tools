@@ -52,6 +52,7 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 `graph_csymm(PLP,DB)`: Parametric object extending `graph_psymm(PLP,DB)` and overriding symmetry/4. In addition to the conditions of `graph_psymm(PLP,DB)`, it also requires the conditions to share the same functors.
 
 `plp(_Parser, _File_)` : A parametric object which takes a parser and a file as a parameter and implements `plpp`. It also provides various predicates for creating the plp, the corresponding database protocol and the concrete database as dynamic entities, and for writing those entities to files.
+`d-separation`: An object that computes d-separation in a graph (implementing graphp) through its public predicate `d-separates(Graph,X,Y,Z)`. Together with `graph(PLP,DB)`, this object implements the ideas of Rückschloß and Weitkämper's paper on independence in probabilistic logic programs.
 
 ### General utilities
 `term_reader`: Uses conditional compilation to provide a more robust alternative to the LogTalk library predicate `term_io::read_from_codes/2` with SWI, XSB and YAP, while falling back to the library predicate with other backends.
