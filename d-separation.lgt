@@ -3,6 +3,7 @@
 :- public([dconnects/4, dseparates/4]).
 
 :- table dconnects/5.
+:- table hactivates/3.
 
 % Compute activates/2 as the transitive closure of edge/2 in a graph
 % Graph (which implements graphp).
