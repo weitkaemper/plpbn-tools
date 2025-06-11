@@ -61,6 +61,16 @@ meek_orientation(W,Z) :-
 	X \= Y,
 	\+ adjacent(X,Y).
 
+meek_orientation(W,Y) :-
+	oriented_edge(X,Z),
+	oriented_edge(Z,Y),
+	adjacent(W,X),
+	adjacent(W,Y),
+	adjacent(W,Z),
+	X \= Y,
+	\+ adjacent(X,Y).
+
+
 symmetry_orientation(X,Y) :-
 	adjacent(X,Y),
 	adjacent(Y,Z),
