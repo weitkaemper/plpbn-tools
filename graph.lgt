@@ -5,7 +5,9 @@
 :- uses(list, [member/2]).
 
 :- table condrule/3.
+:- table edge/2.
 
+:- public(oriented_edge/2).
 
 condrule(X,Y,C) :-
 	_PLP_::probrule(X,_,Body),
@@ -46,6 +48,16 @@ dbcheck([]).
 dbcheck([H|C]) :-
 	_DB_::H,
 	dbcheck(C).
+
+oriented_edge(X,Y) :-
+	_DB_::current_predicate(direction/2),
+	edge(X,Y),
+	X =.. [_|XArgs],
+	Y =.. [_|YArgs],
+	member(T1,XArgs),
+	member(T2,YArgs),
+	_DB_::direction(T1,T2).
+
 
 :- end_object.
 
