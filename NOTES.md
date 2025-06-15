@@ -43,9 +43,9 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 
 ### Core objects
 
-`oriented(Graph)`: Parametric object which takes a graph (implementing `graphp`) as a parameter and itself implements `graphp`. It returns only those edges which can be firmly oriented according to the rules of the PC-algorithm. If the input graph provides a predicate `oriented_edge/2`, it takes those orientations as given, and if the input graph implements `symm_graphp`, it uses those symmetries to orient additional edges.
+`oriented(Graph)`: Parametric object which takes a graph (implementing `graphp`) as a parameter and itself implements `graphp`. It returns only those edges which can be firmly oriented according to the rules of the PC-algorithm. If the input graph provides a predicate `oriented_edge/2`, it takes those orientations as given, and if the input graph implements `symm_graphp`, it uses those symmetries to orient additional edges. It also provides verifiable/0, which is true if all edges of Graph can be oriented.
 
-`graph(PLP,DB)`: Parametric object which takes a probabilistic logic program (implementing `plpp`) and a corresponding database as parameters and implements `cond_graphp`. It computes the ground graph of PLP when instantiated with DB, optionally labelled with the conditions that have been met for the edge to exist in the ground graph. If the database provides a predicate `direction/2`, it constrains the causal direction not to violate `direction/2` (i.e. if `direction(X,Y)`, then no relation involving `Y` can cause one involving `X`). 
+`graph(PLP,DB)`: Parametric object which takes a probabilistic logic program (implementing `plpp`) and a corresponding database as parameters and implements `cond_graphp`. It computes the ground graph of PLP when instantiated with DB, optionally labelled with the conditions that have been met for the edge to exist in the ground graph. If the database provides a predicate `direction/2`, it constrains the causal direction not to violate `direction/2` (i.e. if `direction(X,Y)`, then no relation involving `Y` can cause one involving `X`).
 
 `graph_psymm(PLP,DB)`: Parametric object extending `graph(PLP,DB)` and implementing `symm_graphp`. It defines two edges as symmetric if their respective endpoints share the same predicate functors.
 
