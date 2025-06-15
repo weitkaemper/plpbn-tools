@@ -3,7 +3,9 @@
 :- public(edge/2).
 edge(X,Y) :-
 	oriented_edge(X,Y).
-:- public([oriented_edge/2, adjacent/2, collider/3,chain_orientation/2,symmetry_orientation/2]).
+:- public(verifiable/0).
+verifiable :-
+	forall(_Graph_::edge(X,Y), oriented_edge(X,Y)).
 
 :- table oriented_edge/2.
 :- table adjacent/2.
