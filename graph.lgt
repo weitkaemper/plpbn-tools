@@ -14,6 +14,9 @@ condrule(X,Y,C) :-
 	split_body(Body,Y,C),
 	dbcheck(C).
 
+node(X) :-
+	_PLP_::probrule(X,_,_).
+
 edge(Y,X,C) :-
 	condrule(X,Ys,C),
 	member(YLit,Ys),

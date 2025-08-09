@@ -1,11 +1,15 @@
 :- object(oriented(_Graph_), implements(graphp)).
+% _Graph_ is a graph with symmetries
 
-:- public(edge/2).
-edge(X,Y) :-
-	oriented_edge(X,Y).
 :- public(verifiable/0).
 verifiable :-
 	forall(_Graph_::edge(X,Y), oriented_edge(X,Y)).
+
+edge(X,Y) :-
+	oriented_edge(X,Y).
+
+node(X) :-
+	_Graph_::node(X).
 
 :- table oriented_edge/2.
 :- table adjacent/2.
