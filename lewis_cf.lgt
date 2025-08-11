@@ -14,8 +14,8 @@ atomic_list_concat(A,B,C) :-
 
 :- uses(_BN_,[node/1,edge/2,cpt/3]).
 
-%:- table poss_probs/2.
-%:- table rules/9.
+:- table poss_probs/2.
+:- table rules/9.
 
 parent_val(Node,Val) :-
 	findall(Par,edge(Par,Node),KeysUnsorted),
