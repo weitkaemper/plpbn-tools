@@ -32,12 +32,6 @@ poss_prob(Node,Val,R) :-
 	parent_val(Node,Val),
 	cpt(Node,Val,R).
 
-%probfact(Fact,R) :-
-%	node(Node),
-%	poss_probs(Node,ValProbs),
-%	pairs_keys(ValProbs,Probs),
-%	probfact_aux(Node,Probs,0,Fact,R).
-
 probfact(Fact,R) :-
 	node(Node),
 	poss_probs(Node,ProbVals),
@@ -83,31 +77,6 @@ auxrules(Node,Err,N,[detrule(Err,[PFact])|Auxrules]) :-
 auxrules(_,_,N,[]) :-
 	N < 0.
 
-%probfact_aux(Node,[R|_],N,Fact,R) :-
-%	pfactname(Node,N,Fact).
-%probfact_aux(Node,[_|Probs],N,Fact,R) :-
-%	newprobs(R,Probs,NewProbs),
-%	M is N + 1,
-%	probfact_aux(Node,NewProbs,M,Fact,R).
-
-%probfacts_aux(_,[],_,PFacts,PFacts).
-%probfacts_aux(Node,[R|Probs],N,Acc,PFacts) :-
-%	newprobs(R,Probs,NewProbs),
-%	pfactname(Node,N,Fact),
-%	M is N + 1,
-%	probfacts_aux(Node,NewProbs,M,[Fact-R|Acc],PFacts).
-
-%detrule(Head,Body) :-
-%	node(Node),
-%	setof(Val,parent_val(Node,Val),Vals),
-%	detrule_aux(Node,Vals,0,Head,Body,_,_).
-%
-%detrule_aux(Node,[Val|_],N,Err,Node,[Err|Body]) :-
-%	val_to_body(Val,Body),
-%	errtermname(Node,N,Err).
-%detrule_aux(Node,[_|Vals],N,Err,Node,Body) :-
-%	M is N + 1,s
-%	detrule_aux(Node,Vals,M,Err,Node,Body).
 
 newprobvals(_,[],[]).
 newprobvals(R,[P-Val|ProbVals],[NewP-Val|NewProbVals]) :-

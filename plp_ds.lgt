@@ -3,6 +3,7 @@
 
 :- public([create_plp_ds/0]).
 
+:- uses(os, [decompose_file_name/4]).
 :- uses(list, [member/2, append/3]).
 
 

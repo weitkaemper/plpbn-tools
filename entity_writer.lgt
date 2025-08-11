@@ -1,7 +1,20 @@
 :- object(entity_writer).
-:- public([write_object/4,write_object/5, write_protocol/4, write_protocol/3, write_entities/2]).
+:- public([write_flat/2, write_object/4, write_object/5, write_protocol/4, write_protocol/3, write_entities/2]).
 
 :- uses(format,[format/3]).
+:- uses(list,[length/2]).
+
+write_flat(Object,Identifier) :-
+        findall(implements(Protocol),implements_protocol(Object, Protocol),Relations),
+        findall(Fact,
+                (   Object::current_predicate(Predicate/Arity),
+                    length(L,Arity),
+                    Fact =.. [Predicate|L],
+                    Object::Fact
+                ),
+                Facts),
+        write_object(Identifier,Relations,[],Facts).
+
 
 write_object(Identifier, Relations, Directives, Clauses) :-
         atom_concat(Identifier, '.lgt', Filename),
