@@ -28,11 +28,15 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 ## Protocols
 
 ### Protocols for general use
-`graphp`: Declares `edge/2` as an arc relation in a graph.
+`graphp`: Declares `node/1` to specify possible nodes in a graph and `edge/2` as an arc relation between nodes.
 
 `plpp`: Declares `probrule/3` representing probabilistic rules.
 
+`plp_dsp`: Declares `probfact/2` and `detrule/2`, representing a probabilistic logic program in the distribution semantics. 
+
 `parserp`: Declares plp_rules/3, which takes a list of character codes as input and returns both probabilistic and deterministic rules encoded therein.
+
+`bnp`: Extends `graphp` with a predicate `cpt/3` which takes a node and a valuation of parent nodes as input and returns a float between 0 and 1 inclusive. A valuation is a key-value list of the form `[parent_1 - true, parent_2 - false, ...]`, where the keys (parents) can be expected to be sorted. 
 
 ### Protocols specifically for graphs arising from grounding relational programs
 `cond_graphp`: Extends `graphp` and declares `edge/3`, which tracks a condition leading to the arc in its third argument.
@@ -52,7 +56,14 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 `graph_csymm(PLP,DB)`: Parametric object extending `graph_psymm(PLP,DB)` and overriding symmetry/4. In addition to the conditions of `graph_psymm(PLP,DB)`, it also requires the conditions to share the same functors.
 
 `plp(_Parser, _File_)` : A parametric object which takes a parser and a file as a parameter and implements `plpp`. It also provides various predicates for creating the plp, the corresponding database protocol and the concrete database as dynamic entities, and for writing those entities to files.
+
+`plp_ds(_PLP_)`: A parametric object which takes a probabilistic logic program implementing `plpp` and implements `plp_ds`. 
+
+`plp_ds(_Parser, _File_)`: A parametric object which takes a parser and a file as a parameter and implements `plp_dsp`. It also provides predicates for creating the plp as a dynamic entity, and for writing this entity to file.
+
 `d-separation`: An object that computes d-separation in a graph (implementing graphp) through its public predicate `d-separates(Graph,X,Y,Z)`. Together with `graph(PLP,DB)`, this object implements the ideas of Rückschloß and Weitkämper's paper on independence in probabilistic logic programs.
+
+`lewis_cf(_BN_)` An object that takes a Bayesian network implementing `bnp` as input and implements `plp_dsp`. Note that there is no unique representation of a given Bayesian network as a probabilistic logic program (equivalently, a Boolean functional causal model). `lewis_cf(_BN_)` computes a probabilistic logic program whose counterfactuals are closest to the original distribution, following the idea of Lewis' possible worlds semantics. 
 
 ### General utilities
 `term_reader`: Uses conditional compilation to provide a more robust alternative to the LogTalk library predicate `term_io::read_from_codes/2` with SWI, XSB and YAP, while falling back to the library predicate with other backends.
