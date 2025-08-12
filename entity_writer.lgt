@@ -1,8 +1,21 @@
 :- object(entity_writer).
-:- public([write_flat/2, write_object/4, write_object/5, write_protocol/4, write_protocol/3, write_entities/2]).
+:- public([write_problog/2,write_flat/2, write_object/4, write_object/5, write_protocol/4, write_protocol/3, write_entities/2]).
 
 :- uses(format,[format/3]).
 :- uses(list,[length/2]).
+
+write_problog(Object,Identifier) :-
+        conforms_to_protocol(Object,plp_dsp),
+        atom_concat(Identifier, '.plp', Filename),
+        open(Filename, write, Stream),
+        findall((Prob :: Fact),Object::probfact(Fact,Prob),Probfacts),
+        findall((Head :- Body),Object::detrule(Head,Body),Detrules),
+        listbodies_to_clauses(Detrules,Clauses),
+        write_clauses(Stream,Clauses),
+        nl(Stream),
+        write_probfacts(Stream,Probfacts),
+        close(Stream).
+
 
 write_flat(Object,Identifier) :-
         findall(implements(Protocol),implements_protocol(Object, Protocol),Relations),
@@ -124,10 +137,26 @@ write_clause(Stream, (Head :- Body)) :-
         nl(Stream),
         nl(Stream).
 write_clause(Stream, Fact) :-
+        Fact \= (_ :- _),
         write_term(Stream, Fact, [quoted(true)]),
         write(Stream, '.'),
         nl(Stream),
         nl(Stream).
+
+write_probfacts(Stream,[Probfact|Probfacts]) :-
+        write_probfact(Stream, Probfact),
+        write_probfacts(Stream, Probfacts).
+write_probfacts(_, []).
+
+write_probfact(Stream, (P :: Fact)) :-
+        write(Stream, P),
+        write(Stream, ' :: '),
+        write_term(Stream, Fact, [quoted(true)]),
+        write(Stream, '.'),
+        nl(Stream),
+        nl(Stream).
+
+
 
 % Pretty printer for clause bodies
 write_body(Stream, (A,B), Indent) :-
@@ -157,5 +186,14 @@ write_body(Stream, A, Indent) :-
 indent(Stream, N) :-
         Spaces is N * 4,
         format(Stream, '~*t', [Spaces]).
+
+listbodies_to_clauses([],[]).
+listbodies_to_clauses([(Head :- Bodylist)|Rules],[(Head :- Body)|Clauses]) :-
+        list_to_conj(Bodylist,Body),
+        listbodies_to_clauses(Rules,Clauses).
+
+list_to_conj([A],A).
+list_to_conj([A|As],(A,Bs)) :-
+        list_to_conj(As,Bs).
 
 :- end_object.
