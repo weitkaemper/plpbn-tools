@@ -74,3 +74,12 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 `problog_dcg`: A rudimentary ProbLog parser, it reads a file in ProbLog notation which consists only of clauses of the form `P :: H :- B` with a float `P`, a clause head `H` and a clause body `B`. It does deal with formatting as well as comments starting with `%` and ending in a newline, but not with more sophisticated constructs.
 
 
+### Supporting files for special use cases
+
+To support working with Bayesian networks fitted using the popular `bnlearn` libraries in python and R, the `bnlearn_utlities` directory contains Python and R functions writing a Bayesian network to file as a Logtalk object. 
+This directory also contains a Logtalk convenience script `compute_cf.pl`  to be used with the `swilgt` adapter script as a command line utility for writing a ProbLog program  (the input format for e.g. the What If? counterfactual solver) to file that corresponds to an input Bayesian network (as a Logtalk object), using `lewis_cf` (see above) for the actual computation. It can be invoked as
+```
+swilgt -g convert compute_cf.pl Input.lgt Output
+```
+
+where Input.lgt is a logtalk object implementing `bnp` and the resulting ProbLog program is written to `Output.plp`. 
