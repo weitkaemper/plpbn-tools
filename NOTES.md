@@ -77,9 +77,15 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 ### Supporting files for special use cases
 
 To support working with Bayesian networks fitted using the popular `bnlearn` libraries in python and R, the `bnlearn_utlities` directory contains Python and R functions writing a Bayesian network to file as a Logtalk object. 
-This directory also contains a Logtalk convenience script `compute_cf.pl`  to be used with the `swilgt` adapter script as a command line utility for writing a ProbLog program  (the input format for e.g. the What If? counterfactual solver) to file that corresponds to an input Bayesian network (as a Logtalk object), using `lewis_cf` (see above) for the actual computation. It can be invoked as
+This directory also contains a Logtalk convenience script `compute_cf.pl`  to be used as a command line utility for writing a ProbLog program  (the input format for e.g. the What If? counterfactual solver) to file that corresponds to an input Bayesian network (as a Logtalk object), using `lewis_cf` (see above) for the actual computation. With SWI-Prolog as the back-end Prolog compiler it can be invoked as
 ```
 swilgt -g convert compute_cf.pl Input.lgt Output
 ```
 
 where Input.lgt is a logtalk object implementing `bnp` and the resulting ProbLog program is written to `Output.plp`. 
+
+If XSB is used as the back-end Prolog compiler, it can be invoked as 
+```
+xsblgt -e "[compute_cf], convert('Input.lgt', Output)."
+```
+(note the period mark, the " and the ' in the command line flag). 
