@@ -34,7 +34,7 @@ bn_to_logtalk <- function(fit, object_name="bn_from_r", file="bn.lgt") {
 
     if (length(parents) == 0) {
       # Root node, probs is a named vector
-      p_true <- as.numeric(probs[true_state])
+      p_true <- as.numeric(probs[true_state,1])
       writeLines(sprintf("cpt(%s,[],%g).", tolower(n), p_true), con)
     } else {
       # CPT is a table or array with dimensions: node states x parent states
@@ -109,7 +109,7 @@ fit <- custom.fit(dag, dist = list(
   wet = cpt_wet
   ))
 
-                                        # Export to Logtalk file
+# Export to Logtalk file
 bn_to_logtalk(fit, object_name="bn_sprinkler_r", file="bn_sprinkler_r.lgt")
 
 # Print the result
