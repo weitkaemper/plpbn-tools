@@ -1,5 +1,22 @@
 import bnlearn as bn
+import numpy as np
 from pathlib import Path
+
+
+def normalize_state(s):
+    """
+    Normalize state labels: map '1' -> 'true', '0' -> 'false',
+    otherwise lowercase the string.
+    """
+    if isinstance(s, (int, np.integer)):
+        return "true" if s == 1 else "false"
+    s = str(s).lower()
+    if s in {"1", "true", "yes"}:
+        return "true"
+    elif s in {"0", "false", "no"}:
+        return "false"
+    return s
+
 
 def bn_to_logtalk(model, object_name="bn_from_py", file="bn.lgt"):
     """
@@ -33,29 +50,36 @@ def bn_to_logtalk(model, object_name="bn_from_py", file="bn.lgt"):
         for cpd in model['model'].cpds:
             node = cpd.variable
             parents = list(cpd.get_evidence())
-            state_names = cpd.state_names[node]
+            state_names = [normalize_state(s) for s in cpd.state_names[node]]
+            if "true" not in state_names or "false" not in state_names:
+                raise ValueError(
+                    f"Node {node} must have 'true'/'false' states, got {state_names}"
+                )
+
+            true_index = state_names.index("true")
 
             if not parents:
-                # Root node: single vector of probabilities
-                for state, prob in zip(state_names, cpd.get_values()):
-                    f.write(f"cpt({node.lower()},[],{float(prob)}).\n")
+                # Root node
+                values = np.array(cpd.get_values()).flatten()
+                prob_true = float(values[true_index])
+                f.write(f"cpt({node.lower()},[],{prob_true}).\n")
             else:
-                # Parents exist: multi-dimensional table
+                # With parents
                 evidence_states = [cpd.state_names[p] for p in parents]
-                num_parent_states = [len(s) for s in evidence_states]
 
-                # Flatten the CPT to iterate over parent combos
                 values = cpd.get_values().reshape(-1, len(state_names))
                 for row_idx, probs in enumerate(values):
                     # Decode parent assignments from row index
                     assignments = []
                     idx = row_idx
                     for p, vals in zip(parents, evidence_states):
-                        val = str(bool(vals[idx % len(vals)]))
-                        assignments.append(f"{p.lower()}-{val.lower()}")
+                        vals = [normalize_state(v) for v in vals]
+                        val = vals[idx % len(vals)]
+                        assignments.append(f"{p.lower()}-{val}")
                         idx //= len(vals)
+
                     assignments_str = ",".join(assignments)
-                    for state, prob in zip(state_names, probs):
-                        f.write(f"cpt({node.lower()},[{assignments_str}],{float(prob)}).\n")
+                    prob_true = float(probs[true_index])
+                    f.write(f"cpt({node.lower()},[{assignments_str}],{prob_true}).\n")
 
         f.write("\n:- end_object.\n")
