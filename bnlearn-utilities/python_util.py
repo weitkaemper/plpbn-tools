@@ -5,17 +5,10 @@ from pathlib import Path
 
 def normalize_state(s):
     """
-    Normalize state labels: map '1' -> 'true', '0' -> 'false',
-    otherwise lowercase the string.
+    Convert any value to a canonical 'true' or 'false' string.
+    Works for integers, booleans, strings, None, etc.
     """
-    if isinstance(s, (int, np.integer)):
-        return "true" if s == 1 else "false"
-    s = str(s).lower()
-    if s in {"1", "true", "yes"}:
-        return "true"
-    elif s in {"0", "false", "no"}:
-        return "false"
-    return s
+    return str(bool(s)).lower()
 
 
 def bn_to_logtalk(model, object_name="bn_from_py", file="bn.lgt"):
