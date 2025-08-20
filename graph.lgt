@@ -4,8 +4,10 @@
 
 :- uses(list, [member/2]).
 
+:- if(current_logtalk_flag(tabling,supported)).
 :- table condrule/3.
 :- table edge/2.
+:- endif.
 
 :- public(oriented_edge/2).
 

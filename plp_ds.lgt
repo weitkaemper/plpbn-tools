@@ -6,9 +6,10 @@
 :- uses(os, [decompose_file_name/4]).
 :- uses(list, [member/2, append/3]).
 
-
+:- if(current_logtalk_flag(tabling,supported)).
 :- table probfact/3.
 :- table all_probrules/1.
+:- endif.
 
 probfact(Head, P) :-
 	probfact(Head, P, _).
@@ -67,10 +68,11 @@ conj_to_list(A, [A]).
 :- uses(os, [decompose_file_name/4]).
 :- uses(list, [append/3, member/2, nth1/3]).
 
-
+:- if(current_logtalk_flag(tabling,supported)).
 :- table plp_from_file/2.
 :- table probfact/3.
 :- table rule_from_clause/3.
+:- endif.
 
 probfact(Head, P) :-
 	probfact(Head, P, _).

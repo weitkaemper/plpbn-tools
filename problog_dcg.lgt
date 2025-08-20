@@ -5,7 +5,9 @@
 :- uses(term_reader,[read_from_codes/2]).
 :- uses(list,[append/3]).
 
+:- if(current_logtalk_flag(tabling,supported)).
 :- table plp_rules/3.
+:- endif.
 
 plp_rules(Codes,ProbRules,DetRules) :-
     phrase(plp_rules(ProbRules,DetRules),Codes).
