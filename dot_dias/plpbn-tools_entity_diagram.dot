@@ -1,0 +1,262 @@
+digraph "plpbn-tools" {
+rankdir="BT"
+ranksep="1.0"
+compound="true"
+splines="true"
+clusterrank="local"
+labeljust="l"
+margin="1.0"
+fontname="Monospace"
+fontsize="10"
+fontcolor="dimgray"
+pencolor="dimgray"
+stylesheet="diagrams.css"
+node [shape="ellipse",style="filled",fillcolor="white",fontname="Monospace",fontsize="9"]
+edge [fontname="Monospace",fontsize="9"]
+label="Entity diagram for directory Logic_Programming/plpbn-tools/\lGenerated on 2025-08-20, 20:17\l"
+
+subgraph "cluster_directory_plpbn-tools" {
+bgcolor="whitesmoke"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/">Logic_Programming/plpbn-tools/</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/"
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/lewis_cf.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/lewis_cf.lgt">lewis_cf.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/lewis_cf.lgt"
+"lewis_cf(BN)" [shape="box",tooltip="instance",style="filled",fillcolor="yellow",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">lewis_cf(BN)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">instance</FONT></TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/plp_ds.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/plp_ds.lgt">plp_ds.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/plp_ds.lgt"
+"plp_ds(PLP)" [shape="box",tooltip="instance",style="filled",fillcolor="yellow",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">plp_ds(PLP)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">instance</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>create_entity/0</TD><TD> </TD></TR></TABLE>>]
+"plp_ds(parser,file)" [shape="box",tooltip="instance",style="filled",fillcolor="yellow",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">plp_ds(parser,file)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">instance</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>create_entity/0</TD><TD> </TD></TR><TR><TD> </TD><TD>write_entity/0</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/plpc.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/plpc.lgt">plpc.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/plpc.lgt"
+"plpc" [shape="box",tooltip="instance/class",style="filled",fillcolor="yellow",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">plpc</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">instance/class</FONT></TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/loader.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/loader.lgt">loader.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/loader.lgt"
+"loader" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">loader</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/plpp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/plpp.lgt">plpp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/plpp.lgt"
+"plpp" [shape="note",tooltip="protocol",style="filled",fillcolor="aquamarine",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">plpp</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">protocol</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>probrule/3</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/graphp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/graphp.lgt">graphp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/graphp.lgt"
+"graphp" [shape="note",tooltip="protocol",style="filled",fillcolor="aquamarine",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">graphp</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">protocol</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>node/1</TD><TD> </TD></TR><TR><TD> </TD><TD>edge/2</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/problog_dcg.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/problog_dcg.lgt">problog_dcg.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/problog_dcg.lgt"
+"problog_dcg" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">problog_dcg</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/plp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/plp.lgt">plp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/plp.lgt"
+"plp(parser,file)" [shape="box",tooltip="instance",style="filled",fillcolor="yellow",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">plp(parser,file)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">instance</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>create_plp/0</TD><TD> </TD></TR><TR><TD> </TD><TD>write_plp/0</TD><TD> </TD></TR><TR><TD> </TD><TD>create_dbprotocol/0</TD><TD> </TD></TR><TR><TD> </TD><TD>write_dbprotocol/0</TD><TD> </TD></TR><TR><TD> </TD><TD>create_db/0</TD><TD> </TD></TR><TR><TD> </TD><TD>write_db/0</TD><TD> </TD></TR><TR><TD> </TD><TD>create_entities/0</TD><TD> </TD></TR><TR><TD> </TD><TD>write_entities/0</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/plp_dsc.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/plp_dsc.lgt">plp_dsc.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/plp_dsc.lgt"
+"plp_dsc" [shape="box",tooltip="instance/class",style="filled",fillcolor="yellow",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">plp_dsc</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">instance/class</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>write_problog/1</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/graph.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/graph.lgt">graph.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/graph.lgt"
+"graph(PLP,DB)" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">graph(PLP,DB)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>oriented_edge/2</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/oriented.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/oriented.lgt">oriented.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/oriented.lgt"
+"oriented(graph)" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">oriented(graph)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>verifiable/0</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/graph_csymm.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/graph_csymm.lgt">graph_csymm.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/graph_csymm.lgt"
+"graph_csymm(PLP,DB)" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">graph_csymm(PLP,DB)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/graph_psymm.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/graph_psymm.lgt">graph_psymm.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/graph_psymm.lgt"
+"graph_psymm(PLP,DB)" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">graph_psymm(PLP,DB)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/writerp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/writerp.lgt">writerp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/writerp.lgt"
+"writerp" [shape="note",tooltip="protocol",style="filled",fillcolor="aquamarine",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">writerp</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">protocol</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>write_entity/1</TD><TD> </TD></TR><TR><TD> </TD><TD>create_entity/1</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/cond_graphp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/cond_graphp.lgt">cond_graphp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/cond_graphp.lgt"
+"cond_graphp" [shape="note",tooltip="protocol",style="filled",fillcolor="aquamarine",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">cond_graphp</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">protocol</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>edge/3</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/bnp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/bnp.lgt">bnp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/bnp.lgt"
+"bnp" [shape="note",tooltip="protocol",style="filled",fillcolor="aquamarine",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">bnp</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">protocol</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>cpt/3</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/plp_dsp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/plp_dsp.lgt">plp_dsp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/plp_dsp.lgt"
+"plp_dsp" [shape="note",tooltip="protocol",style="filled",fillcolor="aquamarine",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">plp_dsp</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">protocol</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>probfact/2</TD><TD> </TD></TR><TR><TD> </TD><TD>detrule/2</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/parserp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/parserp.lgt">parserp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/parserp.lgt"
+"parserp" [shape="note",tooltip="protocol",style="filled",fillcolor="aquamarine",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">parserp</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">protocol</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>plp_rules/3</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/symm_graphp.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/symm_graphp.lgt">symm_graphp.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/symm_graphp.lgt"
+"symm_graphp" [shape="note",tooltip="protocol",style="filled",fillcolor="aquamarine",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">symm_graphp</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">protocol</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>symmetry/4</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/term_reader.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/term_reader.lgt">term_reader.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/term_reader.lgt"
+"term_reader" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">term_reader</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>read_from_codes/2</TD><TD> </TD></TR></TABLE>>]
+}
+
+subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/entity_writer_util.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/entity_writer_util.lgt">entity_writer_util.lgt</TD></TR></TABLE>>
+tooltip="Logic_Programming/plpbn-tools/entity_writer_util.lgt"
+"entity_writer_util" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">entity_writer_util</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>write_flat/2</TD><TD> </TD></TR><TR><TD> </TD><TD>write_flat/3</TD><TD> </TD></TR><TR><TD> </TD><TD>write_object/4</TD><TD> </TD></TR><TR><TD> </TD><TD>write_object/5</TD><TD> </TD></TR><TR><TD> </TD><TD>write_protocol/4</TD><TD> </TD></TR><TR><TD> </TD><TD>write_protocol/3</TD><TD> </TD></TR><TR><TD> </TD><TD>write_entities/2</TD><TD> </TD></TR><TR><TD> </TD><TD>write_clauses/2</TD><TD> </TD></TR><TR><TD> </TD><TD>listbodies_to_clauses/2</TD><TD> </TD></TR><TR><TD> </TD><TD>write_probfacts/2</TD><TD> </TD></TR><TR><TD> </TD><TD>create_flat/3</TD><TD> </TD></TR></TABLE>>]
+}
+
+"pairs" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">pairs</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"list" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">list</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"os" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">os</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"reader" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">reader</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"blank_grammars(Format)" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">blank_grammars(Format)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"number_grammars(Format)" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">number_grammars(Format)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"format" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">format</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"lewis_cf(BN)" -> "plp_dsc" [arrowhead="normal",labeltooltip="instantiates",label=<instantiates>]
+"lewis_cf(BN)" -> "pairs" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"lewis_cf(BN)" -> "list" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp_ds(PLP)" -> "plp_dsc" [arrowhead="normal",labeltooltip="instantiates",label=<instantiates>]
+"plp_ds(PLP)" -> "os" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp_ds(PLP)" -> "list" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp_ds(parser,file)" -> "plp_dsc" [arrowhead="normal",labeltooltip="instantiates",label=<instantiates>]
+"plp_ds(parser,file)" -> "reader" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp_ds(parser,file)" -> "os" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp_ds(parser,file)" -> "list" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plpc" -> "writerp" [arrowhead="dot",labeltooltip="implements",label=<implements>]
+"plpc" -> "plpp" [arrowhead="dot",labeltooltip="implements",label=<implements>]
+"plpc" -> "plpc" [arrowhead="normal",labeltooltip="instantiates",label=<instantiates>]
+"plpc" -> "entity_writer_util" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"problog_dcg" -> "parserp" [arrowhead="dot",labeltooltip="implements",label=<implements>]
+"problog_dcg" -> "blank_grammars(Format)" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"problog_dcg" -> "number_grammars(Format)" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"problog_dcg" -> "term_reader" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"problog_dcg" -> "list" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp(parser,file)" -> "plpc" [arrowhead="normal",labeltooltip="instantiates",label=<instantiates>]
+"plp(parser,file)" -> "reader" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp(parser,file)" -> "os" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp(parser,file)" -> "list" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp(parser,file)" -> "entity_writer_util" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"plp_dsc" -> "writerp" [arrowhead="dot",labeltooltip="implements",label=<implements>]
+"plp_dsc" -> "plp_dsp" [arrowhead="dot",labeltooltip="implements",label=<implements>]
+"plp_dsc" -> "plp_dsc" [arrowhead="normal",labeltooltip="instantiates",label=<instantiates>]
+"plp_dsc" -> "entity_writer_util" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"graph(PLP,DB)" -> "cond_graphp" [arrowhead="dot",labeltooltip="implements",label=<implements>]
+"graph(PLP,DB)" -> "list" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"oriented(graph)" -> "graphp" [arrowhead="dot",labeltooltip="implements",label=<implements>]
+"graph_csymm(PLP,DB)" -> "graph_psymm(PLP,DB)" [arrowhead="vee",labeltooltip="extends",label=<extends>]
+"graph_psymm(PLP,DB)" -> "symm_graphp" [arrowhead="dot",labeltooltip="implements",label=<implements>]
+"graph_psymm(PLP,DB)" -> "graph(PLP,DB)" [arrowhead="vee",labeltooltip="extends",label=<extends>]
+"cond_graphp" -> "graphp" [arrowhead="vee",labeltooltip="extends",label=<extends>]
+"bnp" -> "graphp" [arrowhead="vee",labeltooltip="extends",label=<extends>]
+"symm_graphp" -> "graphp" [arrowhead="vee",labeltooltip="extends",label=<extends>]
+"entity_writer_util" -> "format" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+"entity_writer_util" -> "list" [arrowhead="normal",labeltooltip="uses",label=<uses>]
+}
+
+}
