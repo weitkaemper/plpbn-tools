@@ -1,4 +1,4 @@
-digraph "plpbn-tools" {
+digraph "plpbntools" {
 rankdir="BT"
 ranksep="1.0"
 compound="true"
@@ -13,9 +13,9 @@ pencolor="dimgray"
 stylesheet="diagrams.css"
 node [shape="ellipse",style="filled",fillcolor="white",fontname="Monospace",fontsize="9"]
 edge [fontname="Monospace",fontsize="9"]
-label="Entity diagram for directory Logic_Programming/plpbn-tools/\lGenerated on 2025-08-20, 20:17\l"
+label="Entity diagram for directory Logic_Programming/plpbn-tools/\lGenerated on 2025-08-20, 20:41\l"
 
-subgraph "cluster_directory_plpbn-tools" {
+subgraph "cluster_directory_plpbntools" {
 bgcolor="whitesmoke"
 style="rounded"
 margin="10"
@@ -47,15 +47,6 @@ margin="10"
 label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/plpc.lgt">plpc.lgt</TD></TR></TABLE>>
 tooltip="Logic_Programming/plpbn-tools/plpc.lgt"
 "plpc" [shape="box",tooltip="instance/class",style="filled",fillcolor="yellow",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">plpc</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">instance/class</FONT></TD><TD> </TD></TR></TABLE>>]
-}
-
-subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/loader.lgt" {
-bgcolor="snow"
-style="rounded"
-margin="10"
-label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="Logic_Programming/plpbn-tools/loader.lgt">loader.lgt</TD></TR></TABLE>>
-tooltip="Logic_Programming/plpbn-tools/loader.lgt"
-"loader" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">loader</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
 }
 
 subgraph "cluster_file_/home/weitkaemper/Logic_Programming/plpbn-tools/plpp.lgt" {

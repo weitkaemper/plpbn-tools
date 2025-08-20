@@ -2,7 +2,7 @@ The PLP-BN tools are an extensible set of tools designed to relate probabilistic
 The PLP-BN tools are written in tabled Logtalk. In order to run them, you need a copy of [Logtalk](www.logtalk.org),  and to make full use of all its features you also need a backend Prolog compiler which supports tabling. They have been tested using Logtalk 3.91.0 and both [SWI-Prolog](swi-prolog.org) 9.0.4 and [XSB](xsb.sourceforge.net) 5.1.
 
 
-The API documentation maintained with `lgtdoc` can be found in the directory `xml_docs`.
+The API documentation maintained with `lgtdoc` can be found in the directory `xml_docs`; an entity diagram can be found in the directory `dot_dias`.
 
 In order to enhance modularity and extensibility and allow for easier porting between Prolog engines, they are written in Logtalk rather than in plain Prolog.
 One can find a description of Logtalk along with tutorials and handbooks at [the official Logtalk website](www.logtalk.org).
