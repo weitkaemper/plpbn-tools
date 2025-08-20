@@ -142,7 +142,7 @@ write_clauses(Stream, [Clause|Rest]) :-
 write_clause(Stream, (Head :- Body)) :-
         write_term(Stream, Head, [quoted(true)]),
         write(Stream, ' :-'),
-        write_body(Stream, Body, 1),
+        write_body(Stream, Body, 4),
         write(Stream, '.'),
         nl(Stream),
         nl(Stream).
@@ -193,9 +193,12 @@ write_body(Stream, A, Indent) :-
         indent(Stream, Indent),
         write_term(Stream, A, [quoted(true)]).
 
+
+indent(_, 0) :- !.
 indent(Stream, N) :-
-        Spaces is N * 4,
-        format(Stream, '~*t', [Spaces]).
+    put_char(Stream, ' '),
+    N1 is N - 1,
+    indent(Stream, N1).
 
 listbodies_to_clauses([],[]).
 listbodies_to_clauses([(Head :- Bodylist)|Rules],[(Head :- Body)|Clauses]) :-

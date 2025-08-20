@@ -19,9 +19,10 @@
                                   'Y' - 'Second node.',
                                   'Z' - 'Set of nodes d-separating X and Y.']]).
 
-:- table dconnects/5.
-:- table hactivates/3.
-
+:- if(current_logtalk_flag(tabling,supported)).
+:- table(dconnects/5).
+:- table(hactivates/3).
+:- endif.
 % Compute activates/2 as the transitive closure of edge/2 in a graph
 % Graph (which implements graphp).
 

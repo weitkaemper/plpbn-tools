@@ -7,8 +7,8 @@ convert(BNFile,PLP) :-
     logtalk_load(BNFile),
     os::absolute_file_name(BNFile,BNFilePath),
     object_property(BN,file(BNFilePath)),
-    lewis_cf(BN)::write_problog(PLP).
-%    halt.
+    lewis_cf(BN)::write_problog(PLP),
+    halt.
 
 
 convert :-

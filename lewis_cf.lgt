@@ -18,8 +18,8 @@ atomic_list_concat(A,B,C) :-
 :- uses(_BN_,[node/1,edge/2,cpt/3]).
 
 :- if(current_logtalk_flag(tabling,supported)).
-:- table poss_probs/2.
-:- table rules/9.
+:- table(poss_probs/2).
+:- table(rules/9).
 :- endif.
 
 parent_val(Node,Val) :-

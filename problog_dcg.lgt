@@ -8,7 +8,7 @@
 :- uses(list,[append/3]).
 
 :- if(current_logtalk_flag(tabling,supported)).
-:- table plp_rules/3.
+:- table(plp_rules/3).
 :- endif.
 
 plp_rules(Codes,ProbRules,DetRules) :-

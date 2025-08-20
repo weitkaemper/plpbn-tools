@@ -33,7 +33,7 @@
 :- uses(list, [member/2]).
 
 :- if(current_logtalk_flag(tabling,supported)).
-:- table plp_from_file/2.
+:- table(plp_from_file/2).
 :- endif.
 
 probrule(H,P,B) :-

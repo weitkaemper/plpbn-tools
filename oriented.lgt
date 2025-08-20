@@ -17,9 +17,9 @@ node(X) :-
 	_Graph_::node(X).
 
 :- if(current_logtalk_flag(tabling,supported)).
-:- table oriented_edge/2.
-:- table adjacent/2.
-:- table collider/3.
+:- table(oriented_edge/2).
+:- table(adjacent/2).
+:- table(collider/3).
 :- endif.
 
 oriented_edge(X,Y) :-
