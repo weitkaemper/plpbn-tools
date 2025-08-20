@@ -22,7 +22,7 @@ create_plp :-
 write_plp :-
     decompose_file_name(_File_, _, Name, _),
     plp_from_file(PRules,_),
-    entity_writer::write_object(Name, [implements(plpp)], [], PRules).
+    entity_writer_util::write_object(Name, [implements(plpp)], [], PRules).
 
 create_dbprotocol :-
 	decompose_file_name(_File_, _, Name, _),
@@ -38,7 +38,7 @@ write_dbprotocol :-
 	plp_from_file(_,DRules),
 	defined_in(DRules,DFuncs),
 	setof(public(Func), member(Func,DFuncs), Declarations),
-	entity_writer::write_protocol(PName,[],Declarations).
+	entity_writer_util::write_protocol(PName,[],Declarations).
 
 create_db :-
 	decompose_file_name(_File_, _, Name, _),
@@ -52,7 +52,7 @@ write_db :-
 	atom_concat(Name,'_db',DBName),
 	atom_concat(Name,p,PName),
 	plp_from_file(_,DRules),
-	entity_writer::write_object(DBName, [implements(PName)], [], DRules).
+	entity_writer_util::write_object(DBName, [implements(PName)], [], DRules).
 
 create_entities :-
 	create_plp,
@@ -66,7 +66,7 @@ write_entities :-
 	plp_from_file(PRules,DRules),
 	defined_in(DRules,DFuncs),
 	setof(public(Func), member(Func,DFuncs), Declarations),
-	entity_writer::write_entities(Name,[object(Name, [implements(plpp)], [], PRules), protocol(PName,[],Declarations), object(DBName, [implements(PName)], [], DRules)]).
+	entity_writer_util::write_entities(Name,[object(Name, [implements(plpp)], [], PRules), protocol(PName,[],Declarations), object(DBName, [implements(PName)], [], DRules)]).
 
 % Load file and parse it into rules
 plp_from_file(PRules,DRules) :-

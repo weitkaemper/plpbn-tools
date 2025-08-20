@@ -1,4 +1,4 @@
-:- object(entity_writer).
+:- object(entity_writer_util).
 :- public([write_flat/2, write_flat/3, write_object/4, write_object/5, write_protocol/4, write_protocol/3, write_entities/2, write_clauses/2,listbodies_to_clauses/2, write_probfacts/2, create_flat/3]).
 
 :- uses(format,[format/3]).

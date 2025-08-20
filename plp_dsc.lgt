@@ -2,7 +2,7 @@
 
 :- public(write_problog/1).
 
-:- uses(entity_writer,[write_object/4, write_clauses/2,listbodies_to_clauses/2,write_probfacts/2, write_flat/3, create_flat/3]).
+:- uses(entity_writer_util,[write_object/4, write_clauses/2,listbodies_to_clauses/2,write_probfacts/2, write_flat/3, create_flat/3]).
 
 create_entity(Name) :-
 	self(Self),

@@ -68,7 +68,7 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 ### General utilities
 `term_reader`: Uses conditional compilation to provide a more robust alternative to the LogTalk library predicate `term_io::read_from_codes/2` with SWI, XSB and YAP, while falling back to the library predicate with other backends.
 
-`entity_writer`: Provides predicates to write LogTalk entities to file, mirroring LogTalk built-ins for creating dynamic entities such as `create_object/4` and `create_protocol/3`.
+`entity_writer_util`: Provides predicates to write LogTalk entities to file, mirroring LogTalk built-ins for creating dynamic entities such as `create_object/4` and `create_protocol/3`.
 
 ### Parsers
 `problog_dcg`: A rudimentary ProbLog parser, it reads a file in ProbLog notation which consists only of clauses of the form `P :: H :- B` with a float `P`, a clause head `H` and a clause body `B`. It does deal with formatting as well as comments starting with `%` and ending in a newline, but not with more sophisticated constructs.
