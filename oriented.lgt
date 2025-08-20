@@ -81,9 +81,11 @@ meek_orientation(W,Y) :-
 
 symmetry_orientation(X,Y) :-
 	adjacent(X,Y),
-	adjacent(Y,Z),
-	X \= Z,
-	_Graph_::symmetry(X,Y,Z,Y).
+	adjacent(X,Z),
+	Y \= Z,
+	\+adjacent(Y,Z),
+	\+collider(Y,X,Z),
+	_Graph_::symmetry(Y,X,Y,Z).
 
 symmetry_orientation(X,Y) :-
 	adjacent(X,Y),
