@@ -20,6 +20,7 @@ To compute the probabilistic logic program in our internal format from a (simple
 `plp(problog_dcg,'problog_test.plp')::create_entities` creates dynamic objects for the plp, the corresponding database protocol and the concrete database;
 `plp(problog_dcg,'problog_test.plp')::write_entities` writes those to a file called `problog_test.lgt`.
 
+The PLP-BN tools are best used with a backend compiler that supports tablied evaluation, such as XSB or SWI-Prolog. In that case, the paramteric objects mentioned here memoise their computations and can (and should!) therefore be used directly for any further analysis. When used with a backend compiler that does not support tabled evaluation, such as GNU Prolog or Sicstus, it is more expedient to create dynamic objects using the create_entity/1 predicate, thereby avoiding potentially costly reevaluation.
 
 Parametric objects can be combined freely; for instance, `oriented(graph(cora,cora_db))::edge(X,Y)` orients the edges induced by  `cora` and `cora_db`.
 
@@ -32,11 +33,11 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 
 `plpp`: Declares `probrule/3` representing probabilistic rules.
 
-`plp_dsp`: Declares `probfact/2` and `detrule/2`, representing a probabilistic logic program in the distribution semantics. 
+`plp_dsp`: Declares `probfact/2` and `detrule/2`, representing a probabilistic logic program in the distribution semantics.
 
 `parserp`: Declares plp_rules/3, which takes a list of character codes as input and returns both probabilistic and deterministic rules encoded therein.
 
-`bnp`: Extends `graphp` with a predicate `cpt/3` which takes a node and a valuation of parent nodes as input and returns a float between 0 and 1 inclusive. A valuation is a key-value list of the form `[parent_1 - true, parent_2 - false, ...]`, where the keys (parents) can be expected to be sorted. 
+`bnp`: Extends `graphp` with a predicate `cpt/3` which takes a node and a valuation of parent nodes as input and returns a float between 0 and 1 inclusive. A valuation is a key-value list of the form `[parent_1 - true, parent_2 - false, ...]`, where the keys (parents) can be expected to be sorted.
 
 ### Protocols specifically for graphs arising from grounding relational programs
 `cond_graphp`: Extends `graphp` and declares `edge/3`, which tracks a condition leading to the arc in its third argument.
@@ -57,13 +58,13 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 
 `plp(_Parser, _File_)` : A parametric object which takes a parser and a file as a parameter and implements `plpp`. It also provides various predicates for creating the plp, the corresponding database protocol and the concrete database as dynamic entities, and for writing those entities to files.
 
-`plp_ds(_PLP_)`: A parametric object which takes a probabilistic logic program implementing `plpp` and implements `plp_ds`. 
+`plp_ds(_PLP_)`: A parametric object which takes a probabilistic logic program implementing `plpp` and implements `plp_ds`.
 
 `plp_ds(_Parser, _File_)`: A parametric object which takes a parser and a file as a parameter and implements `plp_dsp`. It also provides predicates for creating the plp as a dynamic entity, and for writing this entity to file.
 
 `d-separation`: An object that computes d-separation in a graph (implementing graphp) through its public predicate `d-separates(Graph,X,Y,Z)`. Together with `graph(PLP,DB)`, this object implements the ideas of Rückschloß and Weitkämper's paper on independence in probabilistic logic programs.
 
-`lewis_cf(_BN_)` An object that takes a Bayesian network implementing `bnp` as input and implements `plp_dsp`. Note that there is no unique representation of a given Bayesian network as a probabilistic logic program (equivalently, a Boolean functional causal model). `lewis_cf(_BN_)` computes a probabilistic logic program whose counterfactuals are closest to the original distribution, following the idea of Lewis' possible worlds semantics. 
+`lewis_cf(_BN_)` An object that takes a Bayesian network implementing `bnp` as input and implements `plp_dsp`. Note that there is no unique representation of a given Bayesian network as a probabilistic logic program (equivalently, a Boolean functional causal model). `lewis_cf(_BN_)` computes a probabilistic logic program whose counterfactuals are closest to the original distribution, following the idea of Lewis' possible worlds semantics.
 
 ### General utilities
 `term_reader`: Uses conditional compilation to provide a more robust alternative to the LogTalk library predicate `term_io::read_from_codes/2` with SWI, XSB and YAP, while falling back to the library predicate with other backends.
@@ -76,16 +77,16 @@ Symmetries are used whenever they are provided by the input graph; therefore, `o
 
 ### Supporting files for special use cases
 
-To support working with Bayesian networks fitted using the popular `bnlearn` libraries in python and R, the `bnlearn_utlities` directory contains Python and R functions writing a Bayesian network to file as a Logtalk object. 
+To support working with Bayesian networks fitted using the popular `bnlearn` libraries in python and R, the `bnlearn_utlities` directory contains Python and R functions writing a Bayesian network to file as a Logtalk object.
 This directory also contains a Logtalk convenience script `compute_cf.pl`  to be used as a command line utility for writing a ProbLog program  (the input format for e.g. the What If? counterfactual solver) to file that corresponds to an input Bayesian network (as a Logtalk object), using `lewis_cf` (see above) for the actual computation. With SWI-Prolog as the back-end Prolog compiler it can be invoked as
 ```
 swilgt -g convert compute_cf.pl Input.lgt Output
 ```
 
-where Input.lgt is a logtalk object implementing `bnp` and the resulting ProbLog program is written to `Output.plp`. 
+where Input.lgt is a logtalk object implementing `bnp` and the resulting ProbLog program is written to `Output.plp`.
 
-If XSB is used as the back-end Prolog compiler, it can be invoked as 
+If XSB is used as the back-end Prolog compiler, it can be invoked as
 ```
 xsblgt -e "[compute_cf], convert('Input.lgt', Output)."
 ```
-(note the period mark, the " and the ' in the command line flag). 
+(note the period mark, the " and the ' in the command line flag).
