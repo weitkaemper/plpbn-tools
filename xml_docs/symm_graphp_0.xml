@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[symm_graphp]]></name>
+<functor><![CDATA[symm_graphp/0]]></functor>
+<file><![CDATA[symm_graphp_0]]></file>
+<type>protocol</type>
+<compilation>static</compilation>
+<comment><![CDATA[A protocol for graphs with marked symmetries between edges.]]></comment>
+</entity>
+<relations>
+<extends>
+<name><![CDATA[graphp]]></name>
+<functor><![CDATA[graphp/0]]></functor>
+<scope>public</scope>
+<file><![CDATA[graphp_0]]></file>
+</extends>
+</relations>
+<predicates>
+<inherited>
+<inherited_predicate>
+<name><![CDATA[edge/2]]></name>
+<from><![CDATA[graphp]]></from>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</inherited_predicate>
+<inherited_predicate>
+<name><![CDATA[node/1]]></name>
+<from><![CDATA[graphp]]></from>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</inherited_predicate>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[symmetry/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[symmetry(+term,+term,?term,?term)]]></template>
+<proofs>zero_or_more</proofs>
+</mode>
+<comment><![CDATA[Symmetries enforced between edges that must be oriented in the same direction.]]></comment>
+<template><![CDATA[symmetry(first source,first destination,second source,second destination)]]></template>
+<remarks>
+<remark>
+<topic><![CDATA[Explanation]]></topic>
+<text><![CDATA[symmetry(a,b,c,d) expresses the restriction that should there be a directed edge going from a to b, then any edge between c and d must be in the direction from c to d.]]></text>
+</remark>
+</remarks>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

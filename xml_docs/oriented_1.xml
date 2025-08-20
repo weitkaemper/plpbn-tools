@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[oriented(graph)]]></name>
+<functor><![CDATA[oriented/1]]></functor>
+<file><![CDATA[oriented_1]]></file>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Orientation rules for a directed graph with symmetries.]]></comment>
+<parameters>
+<parameter>
+<name><![CDATA[graph]]></name>
+<description><![CDATA[Graph that implements graphp. If the parameter object implements symm_graphp, then symmetries are taken into account for orienting the edges.]]></description>
+</parameter>
+</parameters>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[graphp]]></name>
+<functor><![CDATA[graphp/0]]></functor>
+<scope>public</scope>
+<file><![CDATA[graphp_0]]></file>
+</implements>
+</relations>
+<predicates>
+<inherited>
+<inherited_predicate>
+<name><![CDATA[edge/2]]></name>
+<from><![CDATA[graphp]]></from>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</inherited_predicate>
+<inherited_predicate>
+<name><![CDATA[node/1]]></name>
+<from><![CDATA[graphp]]></from>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</inherited_predicate>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[verifiable/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[verifiable]]></template>
+<proofs>zero_or_one</proofs>
+</mode>
+<comment><![CDATA[Tests whether all edges of the parameter graph can be oriented.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+<reference>
+<name><![CDATA[graphp]]></name>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</reference>
+<reference>
+<name><![CDATA[symm_graphp]]></name>
+<functor><![CDATA[symm_graphp/0]]></functor>
+<file><![CDATA[symm_graphp_0]]></file>
+</reference>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

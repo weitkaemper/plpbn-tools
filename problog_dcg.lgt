@@ -1,4 +1,6 @@
 :- object(problog_dcg, implements(parserp)).
+:- info([comment is 'A parser for ProbLog files.',
+        remarks is ['Scope and limitations' - 'This rudimentary ProbLog parser reads a file in ProbLog notation which consists only of ordinary Prolog clauses and of clauses of the form `P :: H :- B` with a float `P`, a clause head `H` and a clause body `B`. It does deal with formatting as well as comments starting with `%` and ending in a newline, but not with more sophisticated constructs.']]).
 
 :- uses(blank_grammars(codes),[blank//0, blanks//0]).
 :- uses(number_grammars(codes),[float//1]).

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?xml-stylesheet href="logtalk.css" type="text/css"?><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>plp_dsc</title>
+    <link rel="stylesheet" href="logtalk.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="header">
+      <p class="type">object</p>
+      <h1 class="code">plp_dsc</h1>
+      <blockquote>
+        <p class="comment">Utility class for probabilistic logic programs in the distribution semantics.</p>
+      </blockquote>
+    </div>
+    <div class="entity">
+      <div class="section">
+        <dl class="properties">
+          <dt class="key">availability:</dt>
+          <dd class="value">
+            <code>built_in</code>
+          </dd>
+        </dl>
+        <dl class="properties">
+          <dt class="key">compilation flags:</dt>
+          <dd class="value">
+            <code>static, context_switching_calls</code>
+          </dd>
+        </dl>
+        <dl class="relations">
+          <dt class="key">implements:</dt>
+          <dd class="value">
+            <code>public <a href="writerp_0.html">writerp</a></code>
+          </dd>
+          <dd class="value">
+            <code>public <a href="plp_dsp_0.html">plp_dsp</a></code>
+          </dd>
+          <dt class="key">instantiates:</dt>
+          <dd class="value">
+            <code>public <a href="plp_dsc_0.html">plp_dsc</a></code>
+          </dd>
+          <dt class="key">uses:</dt>
+          <dd class="value">
+            <code>
+              <a href="entity_writer_util_0.html">entity_writer_util</a>
+            </code>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="predicates">
+      <div class="inherited">
+        <h2>Inherited public predicates</h2>
+        <p><code><a href="writerp_0.html#create_entity/1">create_entity/1</a></code>  <code><a href="plp_dsp_0.html#detrule/2">detrule/2</a></code>  <code><a href="plp_dsp_0.html#probfact/2">probfact/2</a></code>  <code><a href="writerp_0.html#write_entity/1">write_entity/1</a></code>  </p>
+      </div>
+      <div class="public">
+        <h2>Public predicates</h2>
+        <div class="section">
+          <h3 id="write_problog/1" class="code">write_problog/1</h3>
+          <blockquote>
+            <p class="comment">Write PLP to a ProbLog-compatible file.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">template:</dt>
+            <dd class="value">
+              <code>write_problog(identifier)</code>
+            </dd>
+            <dd class="value">
+              <ul class="arguments">
+                <li><code>identifier</code> &ndash; <span class="comment">Identifier, from which the file name is obtained by appending the .plp file ending.</span></li>
+              </ul>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>write_problog(+atom) &ndash; one</code>
+            </dd>
+            <dt class="key">remarks:</dt>
+            <dd class="value">explanation: Writes PLP to a file ending in .plp that can be used as imput by PLP systems that can read ProbLog notation. This includes cplint, ProbLog 2 and the Counterfactuals Python package.</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="protected">
+        <h2>Protected predicates</h2>
+        <div class="section">
+          <p class="comment">(no local declarations; see entity ancestors if any)</p>
+        </div>
+      </div>
+      <div class="private">
+        <h2>Private predicates</h2>
+        <div class="section">
+          <p class="comment">(no local declarations; see entity ancestors if any)</p>
+        </div>
+      </div>
+    </div>
+    <div class="operators">
+      <h2>Operators</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="remarks">
+      <h2>Remarks</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="see_also">
+      <h2>See also</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+  </body>
+</html>

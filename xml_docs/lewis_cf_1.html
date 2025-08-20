@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?xml-stylesheet href="logtalk.css" type="text/css"?><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>lewis_cf(BN)</title>
+    <link rel="stylesheet" href="logtalk.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="header">
+      <p class="type">object</p>
+      <h1 class="code">lewis_cf(BN)</h1>
+      <blockquote>
+        <p class="comment">A probabilistic logic program under the distribution semantics corresponsing to a Bayesian network.</p>
+        <ul class="parameters">
+          <li><code>BN</code> &ndash; <span class="comment">A Bayesian network, implementing bnp.</span></li>
+        </ul>
+      </blockquote>
+    </div>
+    <div class="entity">
+      <div class="section">
+        <dl class="properties">
+          <dt class="key">availability:</dt>
+          <dd class="value">
+            <code>built_in</code>
+          </dd>
+        </dl>
+        <dl class="properties">
+          <dt class="key">compilation flags:</dt>
+          <dd class="value">
+            <code>static, context_switching_calls</code>
+          </dd>
+        </dl>
+        <dl class="relations">
+          <dt class="key">instantiates:</dt>
+          <dd class="value">
+            <code>public <a href="plp_dsc_0.html">plp_dsc</a></code>
+          </dd>
+          <dt class="key">uses:</dt>
+          <dd class="value">
+            <code>
+              <a href="list_0.html">list</a>
+            </code>
+          </dd>
+          <dd class="value">
+            <code>
+              <a href="pairs_0.html">pairs</a>
+            </code>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="predicates">
+      <div class="inherited">
+        <h2>Inherited public predicates</h2>
+        <p><code><a href="writerp_0.html#create_entity/1">create_entity/1</a></code>  <code><a href="plp_dsp_0.html#detrule/2">detrule/2</a></code>  <code><a href="plp_dsp_0.html#probfact/2">probfact/2</a></code>  <code><a href="writerp_0.html#write_entity/1">write_entity/1</a></code>  <code><a href="plp_dsc_0.html#write_problog/1">write_problog/1</a></code>  </p>
+      </div>
+      <div class="public">
+        <h2>Public predicates</h2>
+        <div class="section">
+          <p class="comment">(no local declarations; see entity ancestors if any)</p>
+        </div>
+      </div>
+      <div class="protected">
+        <h2>Protected predicates</h2>
+        <div class="section">
+          <p class="comment">(no local declarations; see entity ancestors if any)</p>
+        </div>
+      </div>
+      <div class="private">
+        <h2>Private predicates</h2>
+        <div class="section">
+          <p class="comment">(no local declarations; see entity ancestors if any)</p>
+        </div>
+      </div>
+    </div>
+    <div class="operators">
+      <h2>Operators</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="remarks">
+      <h2>Remarks</h2>
+      <div class="section">
+        <dl class="remarks">
+          <dt class="comment">explanation</dt>
+          <dd class="text">Implements a probabilistic logic program under the distribution semantics that minimises the distance (Lewis-Williamson heuristic) between real and counterfactual scenarios among all such programs that have the same interventional distributions as the Bayesian network supplied as a parameter.</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="see_also">
+      <h2>See also</h2>
+      <div class="section">
+        <ul>
+          <li class="code">
+            <a href="bnp_0.html">bnp</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

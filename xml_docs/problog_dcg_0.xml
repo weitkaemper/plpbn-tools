@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[problog_dcg]]></name>
+<functor><![CDATA[problog_dcg/0]]></functor>
+<file><![CDATA[problog_dcg_0]]></file>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[A parser for ProbLog files.]]></comment>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[parserp]]></name>
+<functor><![CDATA[parserp/0]]></functor>
+<scope>public</scope>
+<file><![CDATA[parserp_0]]></file>
+</implements>
+<uses>
+<name><![CDATA[blank_grammars(Format)]]></name>
+<functor><![CDATA[blank_grammars/1]]></functor>
+<file><![CDATA[blank_grammars_1]]></file>
+</uses>
+<uses>
+<name><![CDATA[list]]></name>
+<functor><![CDATA[list/0]]></functor>
+<file><![CDATA[list_0]]></file>
+</uses>
+<uses>
+<name><![CDATA[number_grammars(Format)]]></name>
+<functor><![CDATA[number_grammars/1]]></functor>
+<file><![CDATA[number_grammars_1]]></file>
+</uses>
+<uses>
+<name><![CDATA[term_reader]]></name>
+<functor><![CDATA[term_reader/0]]></functor>
+<file><![CDATA[term_reader_0]]></file>
+</uses>
+</relations>
+<predicates>
+<inherited>
+<inherited_predicate>
+<name><![CDATA[plp_rules/3]]></name>
+<from><![CDATA[parserp]]></from>
+<functor><![CDATA[parserp/0]]></functor>
+<file><![CDATA[parserp_0]]></file>
+</inherited_predicate>
+</inherited>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+<remark>
+<topic><![CDATA[Scope and limitations]]></topic>
+<text><![CDATA[This rudimentary ProbLog parser reads a file in ProbLog notation which consists only of ordinary Prolog clauses and of clauses of the form `P :: H :- B` with a float `P`, a clause head `H` and a clause body `B`. It does deal with formatting as well as comments starting with `%` and ending in a newline, but not with more sophisticated constructs.]]></text>
+</remark>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

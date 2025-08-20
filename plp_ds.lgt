@@ -1,7 +1,11 @@
 :- object(plp_ds(_PLP_), instantiates(plp_dsc)).
-% _PLP_ implements plpp.
+:- info([comment is 'An object converting a PLP from the probabilistic rule representation to the distribution semantics.',
+	   parameters is ['PLP' - 'A probabilistic logic program implementing plpp.'],
+	   see_also is [plpp]]).
 
 :- public([create_entity/0]).
+:- mode(create_entity,one).
+:- info(create_entity/0, [comment is 'Creates a dynamic object implementing plp_dsp called ds(PLP), where PLP is the parameter of the object.']).
 
 :- uses(os, [decompose_file_name/4]).
 :- uses(list, [member/2, append/3]).
@@ -60,9 +64,16 @@ conj_to_list(A, [A]).
 
 
 :- object(plp_ds(_Parser_,_File_), instantiates(plp_dsc)).
-% _Parses_ implements parserp, _File_ is an atom.
+:- info([comment is 'An object that extracts a probabilistic logic program in the distribution semantics from a parsed probabilistic logic program.',
+         parameters is [parser - 'A parser implementing parserp.',
+                       file - 'A file descriptor (an atom) containing a probabilistic logic program to be parsed by the parser.'],
+        see_also is [parserp]]).
 
 :- public([create_entity/0, write_entity/0]).
+:- mode(create_entity,one).
+:- mode(write_entity,one).
+:- info(create_entity/0, [comment is 'Creates a dynamic object implementing plp_dsp, whose name is derived from the second parameter of the object.']).
+:- info(write_entity/0, [comment is 'Writes probabilistic logic program to file whose name matches the second parameter.']).
 
 :- uses(reader,[file_to_codes/2]).
 :- uses(os, [decompose_file_name/4]).

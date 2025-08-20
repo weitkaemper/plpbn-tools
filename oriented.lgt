@@ -1,7 +1,12 @@
 :- object(oriented(_Graph_), implements(graphp)).
-% _Graph_ is a graph with symmetries
+:- info([comment is 'Orientation rules for a directed graph with symmetries.',
+		parameters is [graph - 'Graph that implements graphp. If the parameter object implements symm_graphp, then symmetries are taken into account for orienting the edges.'],
+		see_also is [graphp,symm_graphp]]).
 
 :- public(verifiable/0).
+:- mode(verifiable, zero_or_one).
+:- info(verifiable/0, [comment is 'Tests whether all edges of the parameter graph can be oriented.']).
+
 verifiable :-
 	forall(_Graph_::edge(X,Y), oriented_edge(X,Y)).
 

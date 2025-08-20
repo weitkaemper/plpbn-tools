@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[graphp]]></name>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+<type>protocol</type>
+<compilation>static</compilation>
+<comment><![CDATA[Protocol for directed graphs.]]></comment>
+</entity>
+<relations>
+</relations>
+<predicates>
+<inherited>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[node/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[node(?term)]]></template>
+<proofs>zero_or_more</proofs>
+</mode>
+<comment><![CDATA[Nodes of the graph.]]></comment>
+<template><![CDATA[node(node)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[edge/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[edge(?term,?term)]]></template>
+<proofs>zero_or_more</proofs>
+</mode>
+<comment><![CDATA[Directed edges of the graph.]]></comment>
+<template><![CDATA[edge(source,destination)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

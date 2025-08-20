@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[parserp]]></name>
+<functor><![CDATA[parserp/0]]></functor>
+<file><![CDATA[parserp_0]]></file>
+<type>protocol</type>
+<compilation>static</compilation>
+<comment><![CDATA[A protocol for parsers of probabilistic logic programs.]]></comment>
+</entity>
+<relations>
+</relations>
+<predicates>
+<inherited>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[plp_rules/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[plp_rules(+list(codes),-list(compound),-list(compound))]]></template>
+<proofs>zero_or_more</proofs>
+</mode>
+<comment><![CDATA[Parses a list of codes into probabilistic and deterministic rules.]]></comment>
+<template><![CDATA[plp_rules(probabilistic logic program,probabilistic rules,deterministic rules)]]></template>
+<arguments>
+<argument>
+<name><![CDATA[probabilistic logic program]]></name>
+<description><![CDATA[Some probabilistic logic program encoded in a list of codes.]]></description>
+</argument>
+<argument>
+<name><![CDATA[probabilistic rules]]></name>
+<description><![CDATA[A list of probabilistic rules, expressed as compounds of the form probrule(head:term, probability:between(float,0,1), body:list).]]></description>
+</argument>
+<argument>
+<name><![CDATA[deterministic rules]]></name>
+<description><![CDATA[A list of deterministic rules, expressed as standard Prolog clauses.]]></description>
+</argument>
+</arguments>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

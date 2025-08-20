@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?xml-stylesheet href="logtalk.css" type="text/css"?><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>parserp</title>
+    <link rel="stylesheet" href="logtalk.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="header">
+      <p class="type">protocol</p>
+      <h1 class="code">parserp</h1>
+      <blockquote>
+        <p class="comment">A protocol for parsers of probabilistic logic programs.</p>
+      </blockquote>
+    </div>
+    <div class="entity">
+      <div class="section">
+        <dl class="properties">
+          <dt class="key">availability:</dt>
+          <dd class="value">
+            <code>built_in</code>
+          </dd>
+        </dl>
+        <dl class="properties">
+          <dt class="key">compilation flags:</dt>
+          <dd class="value">
+            <code>static</code>
+          </dd>
+        </dl>
+        <dt class="key">dependencies:</dt>
+        <dd class="comment">(none)</dd>
+      </div>
+    </div>
+    <div class="predicates">
+      <div class="inherited">
+        <h2>Inherited public predicates</h2>
+        <div class="section">
+          <p class="comment">(none)</p>
+        </div>
+      </div>
+      <div class="public">
+        <h2>Public predicates</h2>
+        <div class="section">
+          <h3 id="plp_rules/3" class="code">plp_rules/3</h3>
+          <blockquote>
+            <p class="comment">Parses a list of codes into probabilistic and deterministic rules.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">template:</dt>
+            <dd class="value">
+              <code>plp_rules(probabilistic logic program,probabilistic rules,deterministic rules)</code>
+            </dd>
+            <dd class="value">
+              <ul class="arguments">
+                <li><code>probabilistic logic program</code> &ndash; <span class="comment">Some probabilistic logic program encoded in a list of codes.</span></li>
+                <li><code>probabilistic rules</code> &ndash; <span class="comment">A list of probabilistic rules, expressed as compounds of the form probrule(head:term, probability:between(float,0,1), body:list).</span></li>
+                <li><code>deterministic rules</code> &ndash; <span class="comment">A list of deterministic rules, expressed as standard Prolog clauses.</span></li>
+              </ul>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>plp_rules(+list(codes),-list(compound),-list(compound)) &ndash; zero_or_more</code>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="protected">
+        <h2>Protected predicates</h2>
+        <div class="section">
+          <p class="comment">(none)</p>
+        </div>
+      </div>
+      <div class="private">
+        <h2>Private predicates</h2>
+        <div class="section">
+          <p class="comment">(none)</p>
+        </div>
+      </div>
+    </div>
+    <div class="operators">
+      <h2>Operators</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="remarks">
+      <h2>Remarks</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="see_also">
+      <h2>See also</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+  </body>
+</html>

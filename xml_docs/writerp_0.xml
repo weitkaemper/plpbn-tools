@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[writerp]]></name>
+<functor><![CDATA[writerp/0]]></functor>
+<file><![CDATA[writerp_0]]></file>
+<type>protocol</type>
+<compilation>static</compilation>
+<comment><![CDATA[A protocol designed for classes whose instantiations can write to file and create objects.]]></comment>
+</entity>
+<relations>
+</relations>
+<predicates>
+<inherited>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[write_entity/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[write_entity(+atom)]]></template>
+<proofs>one</proofs>
+</mode>
+<comment><![CDATA[Writes a flat version of the entity to file.]]></comment>
+<template><![CDATA[write_entity(identifier)]]></template>
+<arguments>
+<argument>
+<name><![CDATA[identifier]]></name>
+<description><![CDATA[used together with the .lgt ending to form the file name and as the name of the object written into the file.]]></description>
+</argument>
+</arguments>
+<remarks>
+<remark>
+<topic><![CDATA[Explanation]]></topic>
+<text><![CDATA[Designed to be implemented by classes associated with the protocols for the main types of entity, such as plp or plp_ds, although it can also be meaningfully overwritten by individual implementations. This predicate writes a flat version of the entity to file, with facts for all the predicates declared in the associated protocol.]]></text>
+</remark>
+</remarks>
+</predicate>
+<predicate>
+<name><![CDATA[create_entity/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[create_entity(+atom)]]></template>
+<proofs>one</proofs>
+</mode>
+<comment><![CDATA[Creates a flat version of the entitic as a dynamic object.]]></comment>
+<template><![CDATA[create_entity(identifier)]]></template>
+<arguments>
+<argument>
+<name><![CDATA[identifier]]></name>
+<description><![CDATA[used as the name of the object written into the file.]]></description>
+</argument>
+</arguments>
+<remarks>
+<remark>
+<topic><![CDATA[Explanation]]></topic>
+<text><![CDATA[Designed to be implemented by classes associated with the protocols for the main types of entity, such as plp or plp_ds, although it can also be meaningfully overwritten by individual implementations. This predicate creates a flat version of the entity as a dynamic object, with facts for all the predicates declared in the associated protocol.]]></text>
+</remark>
+</remarks>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

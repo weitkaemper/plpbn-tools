@@ -1,4 +1,5 @@
 :- object(plpc, implements([writerp,plpp]), instantiates(plpc)).
+:- info([comment is 'Utility class for probabilistic logic programs in the probabilistic rule representation.']).
 
 :- uses(entity_writer_util,[write_flat/3,create_flat/3]).
 

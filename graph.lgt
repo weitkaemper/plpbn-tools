@@ -1,4 +1,9 @@
 :- object(graph(_PLP_,_DB_),implements(cond_graphp)).
+:- info([
+	   comment is 'dependency graph induced by a PLP and an associated DB.',
+	   parameters is ['PLP' - 'A probabilistic logic program conforming to plpp.',
+					  'DB' - 'A database implementing background knowledge to the PLP.'],
+	   see_also is [plpp, plp(_,_)]]).
 
 :- protected(atom_of/2).
 
@@ -10,6 +15,11 @@
 :- endif.
 
 :- public(oriented_edge/2).
+:- mode(oriented_edge(?term,?term),zero_or_more).
+:- info(oriented_edge/2,[
+						  comment is 'Edges whose orientation is already known.',
+						  remarks is [explanation - 'When the database declares and implements a predicate direction/2 between arguments, then oriented/2 pre-orients edges accordingly. Timesteps are a typical example.'],
+						  argnames is [source,destination]]).
 
 condrule(X,Y,C) :-
 	_PLP_::probrule(X,_,Body),

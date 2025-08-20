@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[graph(PLP,DB)]]></name>
+<functor><![CDATA[graph/2]]></functor>
+<file><![CDATA[graph_2]]></file>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[dependency graph induced by a PLP and an associated DB.]]></comment>
+<parameters>
+<parameter>
+<name><![CDATA[PLP]]></name>
+<description><![CDATA[A probabilistic logic program conforming to plpp.]]></description>
+</parameter>
+<parameter>
+<name><![CDATA[DB]]></name>
+<description><![CDATA[A database implementing background knowledge to the PLP.]]></description>
+</parameter>
+</parameters>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[cond_graphp]]></name>
+<functor><![CDATA[cond_graphp/0]]></functor>
+<scope>public</scope>
+<file><![CDATA[cond_graphp_0]]></file>
+</implements>
+<uses>
+<name><![CDATA[list]]></name>
+<functor><![CDATA[list/0]]></functor>
+<file><![CDATA[list_0]]></file>
+</uses>
+</relations>
+<predicates>
+<inherited>
+<inherited_predicate>
+<name><![CDATA[edge/2]]></name>
+<from><![CDATA[graphp]]></from>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</inherited_predicate>
+<inherited_predicate>
+<name><![CDATA[edge/3]]></name>
+<from><![CDATA[cond_graphp]]></from>
+<functor><![CDATA[cond_graphp/0]]></functor>
+<file><![CDATA[cond_graphp_0]]></file>
+</inherited_predicate>
+<inherited_predicate>
+<name><![CDATA[node/1]]></name>
+<from><![CDATA[graphp]]></from>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</inherited_predicate>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[oriented_edge/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[oriented_edge(?term,?term)]]></template>
+<proofs>zero_or_more</proofs>
+</mode>
+<comment><![CDATA[Edges whose orientation is already known.]]></comment>
+<template><![CDATA[oriented_edge(source,destination)]]></template>
+<remarks>
+<remark>
+<topic><![CDATA[explanation]]></topic>
+<text><![CDATA[When the database declares and implements a predicate direction/2 between arguments, then oriented/2 pre-orients edges accordingly. Timesteps are a typical example.]]></text>
+</remark>
+</remarks>
+</predicate>
+</public>
+<protected>
+<predicate>
+<name><![CDATA[atom_of/2]]></name>
+<scope>protected</scope>
+<compilation>static</compilation>
+</predicate>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+<reference>
+<name><![CDATA[plpp]]></name>
+<functor><![CDATA[plpp/0]]></functor>
+<file><![CDATA[plpp_0]]></file>
+</reference>
+<reference>
+<name><![CDATA[plp(parser,file)]]></name>
+<functor><![CDATA[plp/2]]></functor>
+<file><![CDATA[plp_2]]></file>
+</reference>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?xml-stylesheet href="logtalk.css" type="text/css"?><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>writerp</title>
+    <link rel="stylesheet" href="logtalk.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="header">
+      <p class="type">protocol</p>
+      <h1 class="code">writerp</h1>
+      <blockquote>
+        <p class="comment">A protocol designed for classes whose instantiations can write to file and create objects.</p>
+      </blockquote>
+    </div>
+    <div class="entity">
+      <div class="section">
+        <dl class="properties">
+          <dt class="key">availability:</dt>
+          <dd class="value">
+            <code>built_in</code>
+          </dd>
+        </dl>
+        <dl class="properties">
+          <dt class="key">compilation flags:</dt>
+          <dd class="value">
+            <code>static</code>
+          </dd>
+        </dl>
+        <dt class="key">dependencies:</dt>
+        <dd class="comment">(none)</dd>
+      </div>
+    </div>
+    <div class="predicates">
+      <div class="inherited">
+        <h2>Inherited public predicates</h2>
+        <div class="section">
+          <p class="comment">(none)</p>
+        </div>
+      </div>
+      <div class="public">
+        <h2>Public predicates</h2>
+        <div class="section">
+          <h3 id="write_entity/1" class="code">write_entity/1</h3>
+          <blockquote>
+            <p class="comment">Writes a flat version of the entity to file.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">template:</dt>
+            <dd class="value">
+              <code>write_entity(identifier)</code>
+            </dd>
+            <dd class="value">
+              <ul class="arguments">
+                <li><code>identifier</code> &ndash; <span class="comment">used together with the .lgt ending to form the file name and as the name of the object written into the file.</span></li>
+              </ul>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>write_entity(+atom) &ndash; one</code>
+            </dd>
+            <dt class="key">remarks:</dt>
+            <dd class="value">Explanation: Designed to be implemented by classes associated with the protocols for the main types of entity, such as plp or plp_ds, although it can also be meaningfully overwritten by individual implementations. This predicate writes a flat version of the entity to file, with facts for all the predicates declared in the associated protocol.</dd>
+          </dl>
+        </div>
+        <div class="section">
+          <h3 id="create_entity/1" class="code">create_entity/1</h3>
+          <blockquote>
+            <p class="comment">Creates a flat version of the entitic as a dynamic object.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">template:</dt>
+            <dd class="value">
+              <code>create_entity(identifier)</code>
+            </dd>
+            <dd class="value">
+              <ul class="arguments">
+                <li><code>identifier</code> &ndash; <span class="comment">used as the name of the object written into the file.</span></li>
+              </ul>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>create_entity(+atom) &ndash; one</code>
+            </dd>
+            <dt class="key">remarks:</dt>
+            <dd class="value">Explanation: Designed to be implemented by classes associated with the protocols for the main types of entity, such as plp or plp_ds, although it can also be meaningfully overwritten by individual implementations. This predicate creates a flat version of the entity as a dynamic object, with facts for all the predicates declared in the associated protocol.</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="protected">
+        <h2>Protected predicates</h2>
+        <div class="section">
+          <p class="comment">(none)</p>
+        </div>
+      </div>
+      <div class="private">
+        <h2>Private predicates</h2>
+        <div class="section">
+          <p class="comment">(none)</p>
+        </div>
+      </div>
+    </div>
+    <div class="operators">
+      <h2>Operators</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="remarks">
+      <h2>Remarks</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="see_also">
+      <h2>See also</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+  </body>
+</html>

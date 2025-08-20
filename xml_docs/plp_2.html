@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?xml-stylesheet href="logtalk.css" type="text/css"?><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>plp(parser,file)</title>
+    <link rel="stylesheet" href="logtalk.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="header">
+      <p class="type">object</p>
+      <h1 class="code">plp(parser,file)</h1>
+      <blockquote>
+        <p class="comment">An object that extracts an internal probabilistic logic program representation and a database from a parsed probabilistic logic program.</p>
+        <ul class="parameters">
+          <li><code>parser</code> &ndash; <span class="comment">A parser implementing parserp.</span></li>
+          <li><code>file</code> &ndash; <span class="comment">A file descriptor (an atom) containing a probabilistic logic program to be parsed by the parser.</span></li>
+        </ul>
+      </blockquote>
+    </div>
+    <div class="entity">
+      <div class="section">
+        <dl class="properties">
+          <dt class="key">availability:</dt>
+          <dd class="value">
+            <code>built_in</code>
+          </dd>
+        </dl>
+        <dl class="properties">
+          <dt class="key">compilation flags:</dt>
+          <dd class="value">
+            <code>static, context_switching_calls</code>
+          </dd>
+        </dl>
+        <dl class="relations">
+          <dt class="key">instantiates:</dt>
+          <dd class="value">
+            <code>public <a href="plpc_0.html">plpc</a></code>
+          </dd>
+          <dt class="key">uses:</dt>
+          <dd class="value">
+            <code>
+              <a href="entity_writer_util_0.html">entity_writer_util</a>
+            </code>
+          </dd>
+          <dd class="value">
+            <code>
+              <a href="list_0.html">list</a>
+            </code>
+          </dd>
+          <dd class="value">
+            <code>
+              <a href="os_0.html">os</a>
+            </code>
+          </dd>
+          <dd class="value">
+            <code>
+              <a href="reader_0.html">reader</a>
+            </code>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="predicates">
+      <div class="inherited">
+        <h2>Inherited public predicates</h2>
+        <p><code><a href="writerp_0.html#create_entity/1">create_entity/1</a></code>  <code><a href="plpp_0.html#probrule/3">probrule/3</a></code>  <code><a href="writerp_0.html#write_entity/1">write_entity/1</a></code>  </p>
+      </div>
+      <div class="public">
+        <h2>Public predicates</h2>
+        <div class="section">
+          <h3 id="create_plp/0" class="code">create_plp/0</h3>
+          <blockquote>
+            <p class="comment">Creates PLP (implementing plpp) as a dynamic object whose name matches the file name.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>create_plp &ndash; one</code>
+            </dd>
+          </dl>
+        </div>
+        <div class="section">
+          <h3 id="write_plp/0" class="code">write_plp/0</h3>
+          <blockquote>
+            <p class="comment">Writes PLP (implementing plpp) to a file whose name matches the file name.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>write_plp &ndash; one</code>
+            </dd>
+          </dl>
+        </div>
+        <div class="section">
+          <h3 id="create_dbprotocol/0" class="code">create_dbprotocol/0</h3>
+          <blockquote>
+            <p class="comment">Creates matching database protocol.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>create_dbprotocol &ndash; one</code>
+            </dd>
+            <dt class="key">remarks:</dt>
+            <dd class="value">explanation: Creates a dynamic protocol to be implemented by the background knowledge bases for the PLP.</dd>
+          </dl>
+        </div>
+        <div class="section">
+          <h3 id="write_dbprotocol/0" class="code">write_dbprotocol/0</h3>
+          <blockquote>
+            <p class="comment">Writes matching database protocol to file.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>write_dbprotocol &ndash; one</code>
+            </dd>
+            <dt class="key">remarks:</dt>
+            <dd class="value">explanation: Writes a dynamic protocol to be implemented by the background knowledge bases for the PLP. The file name is created by appending p to the file identifier.</dd>
+          </dl>
+        </div>
+        <div class="section">
+          <h3 id="create_db/0" class="code">create_db/0</h3>
+          <blockquote>
+            <p class="comment">Creates knowledge base (implementing matching DB protocol) as a dynamic object whose name appends _db to the file name.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>create_db &ndash; one</code>
+            </dd>
+          </dl>
+        </div>
+        <div class="section">
+          <h3 id="write_db/0" class="code">write_db/0</h3>
+          <blockquote>
+            <p class="comment">Writes knowledge base (implementing matching DB protocol) to a file whose name appends _db to the file name.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>write_db &ndash; one</code>
+            </dd>
+          </dl>
+        </div>
+        <div class="section">
+          <h3 id="create_entities/0" class="code">create_entities/0</h3>
+          <blockquote>
+            <p class="comment">Dynamically creates a PLP, a DB Protocol and a knowledge base.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>create_entities &ndash; one</code>
+            </dd>
+            <dt class="key">see also:</dt>
+            <dd class="code">
+              <a href="#create_plp/0">create_plp/0</a>
+            </dd>
+            <dd class="code">
+              <a href="#create_dbprotocol/0">create_dbprotocol/0</a>
+            </dd>
+            <dd class="code">
+              <a href="#create_db/0">create_db/0</a>
+            </dd>
+          </dl>
+        </div>
+        <div class="section">
+          <h3 id="write_entities/0" class="code">write_entities/0</h3>
+          <blockquote>
+            <p class="comment">Writes  a PLP, a DB Protocol and a knowledge base to file.</p>
+          </blockquote>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+            <dt class="key">mode &ndash; number of proofs:</dt>
+            <dd class="value">
+              <code>write_entities &ndash; one</code>
+            </dd>
+            <dt class="key">see also:</dt>
+            <dd class="code">
+              <a href="#write_plp/0">write_plp/0</a>
+            </dd>
+            <dd class="code">
+              <a href="#write_dbprotocol/0">write_dbprotocol/0</a>
+            </dd>
+            <dd class="code">
+              <a href="#write_db/0">write_db/0</a>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="protected">
+        <h2>Protected predicates</h2>
+        <div class="section">
+          <h3 id="plp_from_file/2" class="code">plp_from_file/2</h3>
+          <dl class="properties">
+            <dt class="key">compilation flags:</dt>
+            <dd class="value">
+              <code>static</code>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="private">
+        <h2>Private predicates</h2>
+        <div class="section">
+          <p class="comment">(no local declarations; see entity ancestors if any)</p>
+        </div>
+      </div>
+    </div>
+    <div class="operators">
+      <h2>Operators</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="remarks">
+      <h2>Remarks</h2>
+      <div class="section">
+        <h3 class="comment">(none)</h3>
+      </div>
+    </div>
+    <div class="see_also">
+      <h2>See also</h2>
+      <div class="section">
+        <ul>
+          <li class="code">
+            <a href="parserp_0.html">parserp</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

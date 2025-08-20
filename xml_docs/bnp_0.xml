@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[bnp]]></name>
+<functor><![CDATA[bnp/0]]></functor>
+<file><![CDATA[bnp_0]]></file>
+<type>protocol</type>
+<compilation>static</compilation>
+<comment><![CDATA[Protocol for Bayesian networks.]]></comment>
+</entity>
+<relations>
+<extends>
+<name><![CDATA[graphp]]></name>
+<functor><![CDATA[graphp/0]]></functor>
+<scope>public</scope>
+<file><![CDATA[graphp_0]]></file>
+</extends>
+</relations>
+<predicates>
+<inherited>
+<inherited_predicate>
+<name><![CDATA[edge/2]]></name>
+<from><![CDATA[graphp]]></from>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</inherited_predicate>
+<inherited_predicate>
+<name><![CDATA[node/1]]></name>
+<from><![CDATA[graphp]]></from>
+<functor><![CDATA[graphp/0]]></functor>
+<file><![CDATA[graphp_0]]></file>
+</inherited_predicate>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[cpt/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[cpt(+term,+list(pair(term,boolean)),-between(float,0,1))]]></template>
+<proofs>zero_or_one</proofs>
+</mode>
+<comment><![CDATA[The conditional probability table.]]></comment>
+<template><![CDATA[cpt(child,parent valuation,probability)]]></template>
+<remarks>
+<remark>
+<topic><![CDATA[Implementation notes]]></topic>
+<text><![CDATA[An implementation of this protocol may expect parent valuations to be sorted according to the standard order of terms, and is not required to deal with unbound first or second argument. That way, Bayesian networks can be specified either by simply writing a list of one line per (ordered) parent valuation or by giving a more general predicate that computes a probability given some input.]]></text>
+</remark>
+</remarks>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

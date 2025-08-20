@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[term_reader]]></name>
+<functor><![CDATA[term_reader/0]]></functor>
+<file><![CDATA[term_reader_0]]></file>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+</entity>
+<relations>
+</relations>
+<predicates>
+<inherited>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[read_from_codes/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

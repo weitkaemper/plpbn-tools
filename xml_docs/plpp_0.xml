@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[plpp]]></name>
+<functor><![CDATA[plpp/0]]></functor>
+<file><![CDATA[plpp_0]]></file>
+<type>protocol</type>
+<compilation>static</compilation>
+<comment><![CDATA[Protocol for probabilistic logic programs in probabilistic rule representation.]]></comment>
+</entity>
+<relations>
+</relations>
+<predicates>
+<inherited>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[probrule/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[probrule(?term,?between(float,0,1),?list(term))]]></template>
+<proofs>zero_or_more</proofs>
+</mode>
+<comment><![CDATA[Probabilistic rules of the program.]]></comment>
+<template><![CDATA[probrule(head,probability,body)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>

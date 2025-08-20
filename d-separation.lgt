@@ -1,6 +1,23 @@
 :- object(d-separation).
+:- info([comment is 'Tools for d-separation in a directed acyclic graph.',
+        see_also is [graphp]]).
 
-:- public([dconnects/4, dseparates/4]).
+:- public(dconnects/4).
+:- mode(dconnects(+object,+term,+term,+list(term)),zero_or_one).
+:- info(dconnects/4, [
+                     comment is 'D-connection in a directed acyclic graph.',
+                     arguments is [graph - 'Object implementing graphp.',
+                                  'X' - 'First node.',
+                                  'Y' - 'Second node.',
+                                  'Z' - 'Set of nodes d-connecting X and Y.']]).
+:- public(dseparates/4).
+:- mode(dseparates(+object,+term,+term,+list(term)),zero_or_one).
+:- info(dseparates/4, [
+                     comment is 'D-separation in a directed acyclic graph.',
+                     arguments is [graph - 'Object implementing graphp.',
+                                  'X' - 'First node.',
+                                  'Y' - 'Second node.',
+                                  'Z' - 'Set of nodes d-separating X and Y.']]).
 
 :- table dconnects/5.
 :- table hactivates/3.
@@ -45,7 +62,7 @@ dconnects(Graph,X,Y,Z,left) :-
     activates(Graph,Z,Y1),
     dconnects(Graph,X,Y1,Z,right).
 
-% dseparates/3 is the complement of dconnects/3
+% dseparates/4 is the complement of dconnects/4
 
 dseparates(Graph,X,Y,Z) :-
     \+dconnects(Graph,X,Y,Z).

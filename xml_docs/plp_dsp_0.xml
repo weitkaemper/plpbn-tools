@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk_entity SYSTEM "logtalk_entity.dtd">
+<?xml-stylesheet type="text/xsl" href="logtalk_entity_to_xml.xsl"?>
+<logtalk_entity>
+<entity>
+<name><![CDATA[plp_dsp]]></name>
+<functor><![CDATA[plp_dsp/0]]></functor>
+<file><![CDATA[plp_dsp_0]]></file>
+<type>protocol</type>
+<compilation>static</compilation>
+<comment><![CDATA[A protocol representing a probabilistic logic program in the distribution semantics.]]></comment>
+</entity>
+<relations>
+</relations>
+<predicates>
+<inherited>
+</inherited>
+<public>
+<predicate>
+<name><![CDATA[probfact/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[probfact(?term,?between(float,0,1))]]></template>
+<proofs>zero_or_more</proofs>
+</mode>
+<comment><![CDATA[Probabilistic facts of the program.]]></comment>
+<template><![CDATA[probfact(fact,probability)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[detrule/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[detrule(?term,?list(term))]]></template>
+<proofs>zero_or_more</proofs>
+</mode>
+<comment><![CDATA[Deterministic rules of the program.]]></comment>
+<template><![CDATA[detrule(head,body)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+<see_also>
+</see_also>
+<availability>built_in</availability>
+</logtalk_entity>
