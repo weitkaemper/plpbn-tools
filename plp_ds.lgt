@@ -27,7 +27,7 @@ detrule(Head, [Term|Body]) :-
 	probfact(Term,_,N).
 
 create_entity :-
-	create_entity(ds(_PLP_)).
+	::create_entity(ds(_PLP_)).
 
 all_probrules(KVList) :-
 	findall(probrule(Head,P,Body), (_PLP_::probrule(Head,P,Body)), Rules),
@@ -94,10 +94,10 @@ detrule(Head, [Term|Body]) :-
 
 create_entity :-
     decompose_file_name(_File_, _, Name, _),
-	create_entity(Name).
+	::create_entity(Name).
 write_entity :-
     decompose_file_name(_File_, _, Name, _),
-	write_entity(Name).
+	::write_entity(Name).
 
 
 
