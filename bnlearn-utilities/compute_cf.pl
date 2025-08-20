@@ -7,8 +7,8 @@ convert(BNFile,PLP) :-
     logtalk_load(BNFile),
     os::absolute_file_name(BNFile,BNFilePath),
     object_property(BN,file(BNFilePath)),
-    entity_writer::write_problog(lewis_cf(BN),PLP),
-    halt.
+    lewis_cf(BN)::write_problog(PLP).
+%    halt.
 
 
 convert :-
@@ -16,3 +16,10 @@ convert :-
     logtalk_load(os(loader)),
     os::command_line_arguments([BNFile,PLP]),
     convert(BNFile,PLP).
+
+
+
+
+
+
+

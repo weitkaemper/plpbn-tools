@@ -1,23 +1,33 @@
 :- object(entity_writer).
-:- public([write_problog/2,write_flat/2, write_object/4, write_object/5, write_protocol/4, write_protocol/3, write_entities/2]).
+:- public([write_flat/2, write_flat/3, write_object/4, write_object/5, write_protocol/4, write_protocol/3, write_entities/2, write_clauses/2,listbodies_to_clauses/2, write_probfacts/2, create_flat/3]).
 
 :- uses(format,[format/3]).
-:- uses(list,[length/2]).
+:- uses(list,[length/2,member/2]).
 
-write_problog(Object,Identifier) :-
-        conforms_to_protocol(Object,plp_dsp),
-        atom_concat(Identifier, '.plp', Filename),
-        open(Filename, write, Stream),
-        findall((Prob :: Fact),Object::probfact(Fact,Prob),Probfacts),
-        findall((Head :- Body),Object::detrule(Head,Body),Detrules),
-        listbodies_to_clauses(Detrules,Clauses),
-        write_clauses(Stream,Clauses),
-        nl(Stream),
-        write_probfacts(Stream,Probfacts),
-        close(Stream).
+create_flat(Object, Protocol, Identifier) :-
+        findall(Fact,
+                (   protocol_property(Protocol,public(Predicates)),
+                    member(Predicate/Arity,Predicates),
+                    length(L,Arity),
+                    Fact =.. [Predicate|L],
+                    Object::Fact
+                ),
+                Facts),
+        create_object(Identifier,[implements(Protocol)],[],Facts).
 
 
-write_flat(Object,Identifier) :-
+write_flat(Object, Protocol, Identifier) :-
+        findall(Fact,
+                (   protocol_property(Protocol,public(Predicates)),
+                    member(Predicate/Arity,Predicates),
+                    length(L,Arity),
+                    Fact =.. [Predicate|L],
+                    Object::Fact
+                ),
+                Facts),
+        write_object(Identifier,[implements(Protocol)],[],Facts).
+
+write_flat(Object, Identifier) :-
         findall(implements(Protocol),implements_protocol(Object, Protocol),Relations),
         findall(Fact,
                 (   Object::current_predicate(Predicate/Arity),

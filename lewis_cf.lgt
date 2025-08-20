@@ -1,4 +1,4 @@
-:- object(lewis_cf(_BN_), implements(plp_dsp)).
+:- object(lewis_cf(_BN_), instantiates(plp_dsc)).
 % _BN_ implements bnp.
 
 :- if(current_logtalk_flag(prolog_dialect, xsb)).

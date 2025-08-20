@@ -1,13 +1,12 @@
-:- object(plp_ds(_PLP_), implements(plp_dsp)).
+:- object(plp_ds(_PLP_), instantiates(plp_dsc)).
 % _PLP_ implements plpp.
 
-:- public([create_plp_ds/0]).
+:- public([create_entity/0]).
 
 :- uses(os, [decompose_file_name/4]).
 :- uses(list, [member/2, append/3]).
 
 
-:- table plp_from_file/2.
 :- table probfact/3.
 :- table all_probrules/1.
 
@@ -27,14 +26,11 @@ detrule(Head, [Term|Body]) :-
     member(N-probrule(Head,_,Body),PRules),
 	probfact(Term,_,N).
 
-create_plp_ds :-
-	findall(probfact(H, P), probfact(H,P), PFacts),
-	findall(detrule(H, B), detrule(H,B), DRules),
-	append(PFacts,DRules,Clauses),
-    create_object(ds(_PLP_), [implements(plp_dsp)], [], Clauses).
+create_entity :-
+	create_entity(ds(_PLP_)).
 
 all_probrules(KVList) :-
-	findall(probrule(Head,P,Body), _PLP_::probrule(Head,P,Body), Rules),
+	findall(probrule(Head,P,Body), (_PLP_::probrule(Head,P,Body)), Rules),
 	numbered_list(Rules,KVList).
 
 
@@ -65,7 +61,7 @@ conj_to_list(A, [A]).
 :- object(plp_ds(_Parser_,_File_), implements(plp_dsp)).
 % _Parses_ implements parserp, _File_ is an atom.
 
-:- public([create_plp_ds/0, write_plp_ds/0]).
+:- public([create_entity/0, write_entity/0]).
 
 :- uses(reader,[file_to_codes/2]).
 :- uses(os, [decompose_file_name/4]).
@@ -96,20 +92,12 @@ detrule(Head, [Term|Body]) :-
     nth1(N,PRules,probrule(Head,_,Body)),
 	probfact(Term,_,N).
 
-create_plp_ds :-
+create_entity :-
     decompose_file_name(_File_, _, Name, _),
-	findall(probfact(H, P), probfact(H,P), PFacts),
-	findall(detrule(H, B), detrule(H,B), DRules),
-	append(PFacts,DRules,Clauses),
-    create_object(Name, [implements(plp_dsp)], [], Clauses).
-
-write_plp_ds :-
+	create_entity(Name).
+write_entity :-
     decompose_file_name(_File_, _, Name, _),
-	findall(probfact(H, P), probfact(H,P), PFacts),
-	findall(detrule(H, B), detrule(H,B), DRules),
-	append(PFacts,DRules,Clauses),
-    entity_writer::write_object(Name, [implements(plp_dsp)], [], Clauses).
-
+	create_emtity(Name).
 
 
 
