@@ -58,7 +58,7 @@ conj_to_list(A, [A]).
 
 
 
-:- object(plp_ds(_Parser_,_File_), implements(plp_dsp)).
+:- object(plp_ds(_Parser_,_File_), instantiates(plp_dsc)).
 % _Parses_ implements parserp, _File_ is an atom.
 
 :- public([create_entity/0, write_entity/0]).
@@ -97,7 +97,7 @@ create_entity :-
 	create_entity(Name).
 write_entity :-
     decompose_file_name(_File_, _, Name, _),
-	create_emtity(Name).
+	write_entity(Name).
 
 
 

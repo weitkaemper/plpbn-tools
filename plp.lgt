@@ -1,7 +1,8 @@
-:- object(plp(_Parser_,_File_), implements(plpp)).
+:- object(plp(_Parser_,_File_), instantiates(plpc)).
 % _Parses_ implements parserp, _File_ is an atom.
-
 :- public([create_plp/0, write_plp/0, create_dbprotocol/0, write_dbprotocol/0, create_db/0, write_db/0, create_entities/0, write_entities/0]).
+:- protected(plp_from_file/2).
+
 
 :- uses(reader,[file_to_codes/2]).
 :- uses(os, [decompose_file_name/4]).
@@ -67,6 +68,7 @@ write_entities :-
 	defined_in(DRules,DFuncs),
 	setof(public(Func), member(Func,DFuncs), Declarations),
 	entity_writer_util::write_entities(Name,[object(Name, [implements(plpp)], [], PRules), protocol(PName,[],Declarations), object(DBName, [implements(PName)], [], DRules)]).
+
 
 % Load file and parse it into rules
 plp_from_file(PRules,DRules) :-
