@@ -1,6 +1,13 @@
 %#!/usr/bin/swilgt
 
-%:- initialization(convert).
+:- if((current_prolog_flag(dialect, swi), \+current_predicate(current_logtalk_flag/2), pack_property(logtalk,_))).
+:- use_module(library(logtalk)).
+:- endif.
+:- if((current_prolog_flag(dialect, swi), \+current_predicate(current_logtalk_flag/2), \+pack_property(logtalk,_))).
+:- pack_install(logtalk).
+:- use_module(library(logtalk)).
+:- endif.
+
 convert(BNFile,PLP) :-
     set_logtalk_flag(report,off),
     logtalk_load(['../loader']),

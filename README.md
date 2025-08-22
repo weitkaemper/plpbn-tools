@@ -27,7 +27,19 @@ To compute a probabilistic logic program from a Bayesian network, use the object
 Parametric objects can be combined freely; for instance, `oriented(graph(cora,cora_db))::edge(X,Y)` orients the edges induced by  `cora` and `cora_db`.
 
 To support working with Bayesian networks fitted using the popular `bnlearn` libraries in python and R, the `bnlearn_utlities` directory contains Python and R functions writing a Bayesian network to file as a Logtalk object.
-This directory also contains a Logtalk convenience script `compute_cf.pl`  to be used as a command line utility for writing a ProbLog program  (the input format for e.g. the What If? counterfactual solver) to file that corresponds to an input Bayesian network (as a Logtalk object), using `lewis_cf` (see above) for the actual computation. With SWI-Prolog as the back-end Prolog compiler it can be invoked as
+This directory also contains a Prolog/Logtalk convenience script `compute_cf.pl`  to be used as a command line utility for writing a ProbLog program  (the input format for e.g. the What If? counterfactual solver) to file that corresponds to an input Bayesian network (as a Logtalk object), using `lewis_cf` (see above) for the actual computation.
+
+The easiest way to use that script from scratch is to install SWI-Prolog (either from www.swi-prolog.org or from a package manager) and then to call
+```
+swipl -g convert compute_cf.pl Input.lgt Output
+```
+The first time of calling this script, if Logtalk is not yet installed, the SWI-Prolog interpreter should now prompt you for a directory for installing packs and for confirmation to install Logtalk as a SWI-Prolog pack.
+
+After Logtalk has been successfully installed, conversion should proceed as normal.
+
+If Logtalk has already been installed in the ordinary, backend-agnostic manner as detailed on www.logtalk.org, the script should be launched from Logtalk instead of from plain Prolog.
+
+With SWI-Prolog as the back-end Prolog compiler it can be invoked as
 ```
 swilgt -g convert compute_cf.pl Input.lgt Output
 ```
@@ -39,5 +51,4 @@ If XSB is used as the back-end Prolog compiler, it can be invoked as
 xsblgt -e "[compute_cf], convert('Input.lgt', Output)."
 ```
 (note the period mark, the " and the ' in the command line flag).
-
 
