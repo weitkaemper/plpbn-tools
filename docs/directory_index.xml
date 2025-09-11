@@ -18,6 +18,11 @@
 <functor><![CDATA[cond_graphp/0]]></functor>
 </entity>
 <entity>
+<file><![CDATA[dseparation_0]]></file>
+<name><![CDATA[dseparation]]></name>
+<functor><![CDATA[dseparation/0]]></functor>
+</entity>
+<entity>
 <file><![CDATA[entity_writer_util_0]]></file>
 <name><![CDATA[entity_writer_util]]></name>
 <functor><![CDATA[entity_writer_util/0]]></functor>

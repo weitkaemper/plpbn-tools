@@ -35,9 +35,17 @@
 
 * [`plp(parser,file)`](plp_2.md#create_plp/0)
 
+## `dconnects/4`
+
+* [`dseparation`](dseparation_0.md#dconnects/4)
+
 ## `detrule/2`
 
 * [`plp_dsp`](plp_dsp_0.md#detrule/2)
+
+## `dseparates/4`
+
+* [`dseparation`](dseparation_0.md#dseparates/4)
 
 ## `edge/2`
 

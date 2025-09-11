@@ -10,6 +10,7 @@
 :- uses(list, [member/2]).
 
 :- if(current_logtalk_flag(tabling,supported)).
+:- table(node/1).
 :- table(condrule/3).
 :- table(edge/2).
 :- endif.
@@ -27,12 +28,13 @@ condrule(X,Y,C) :-
 	dbcheck(C).
 
 node(X) :-
-	_PLP_::probrule(X,_,_).
+        condrule(X,_,_).
 
 edge(Y,X,C) :-
 	condrule(X,Ys,C),
 	member(YLit,Ys),
-	atom_of(YLit,Y).
+	atom_of(YLit,Y),
+	node(Y).
 
 edge(X,Y) :-
 	edge(X,Y,_).

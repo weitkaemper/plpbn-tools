@@ -19,10 +19,10 @@
                                   'Y' - 'Second node.',
                                   'Z' - 'Set of nodes d-separating X and Y.']]).
 
-:- if(current_logtalk_flag(tabling,supported)).
-:- table(dconnects/5).
-:- table(hactivates/3).
-:- endif.
+%:- if(current_logtalk_flag(tabling,supported)).
+%:- table(dconnects/5).
+%:- table(hactivates/3).
+%:- endif.
 
 :- uses(list,[member/2]).
 

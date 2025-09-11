@@ -4,6 +4,7 @@
 
 ## `Objects`
 
+* [`dseparation`](dseparation_0.md)
 * [`entity_writer_util`](entity_writer_util_0.md)
 * [`graph(PLP,DB)`](graph_2.md)
 * [`graph_csymm(PLP,DB)`](graph_csymm_2.md)
