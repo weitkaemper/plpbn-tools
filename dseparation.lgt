@@ -1,4 +1,4 @@
-:- object(d-separation).
+:- object(dseparation).
 :- info([comment is 'Tools for d-separation in a directed acyclic graph.',
         see_also is [graphp]]).
 
@@ -23,6 +23,9 @@
 :- table(dconnects/5).
 :- table(hactivates/3).
 :- endif.
+
+:- uses(list,[member/2]).
+
 % Compute activates/2 as the transitive closure of edge/2 in a graph
 % Graph (which implements graphp).
 
