@@ -1,3 +1,3 @@
 :- object(example_loader).
-:- initialization(logtalk_load([test1, test2, 'examples/cora.lgt', 'examples/cora_db.lgt', 'examples/uwcse1.lgt', 'examples/uwcse1_db.lgt', 'examples/uwcse1_db2.lgt', 'examples/infection.lgt', 'examples/infection_db.lgt', 'examples/bn_sprinkler.lgt'])).
+:- initialization(logtalk_load([test1, test2, 'examples/cora.lgt', 'examples/cora_db.lgt', 'examples/uwcse1.lgt', 'examples/uwcse1_db.lgt', 'examples/uwcse1_db2.lgt', 'examples/infection.lgt', 'examples/infection_db.lgt', 'examples/bn_sprinkler.lgt',  'examples/ex_cyclic_plpds_1',  'examples/ex_cyclic_plpds_2', 'examples/ex_lpmln_1', 'examples/ex_lpmln_2'])).
 :- end_object.
