@@ -1,4 +1,4 @@
-:- object(cora, implements(plpp)).
+:- object(cora, instantiates(plpc)).
 
 probrule(samebib(B,C),0.3,[author(B,D),author(C,E),sameauthor(D,E)]).
 probrule(samebib(B,C),0.3,[title(B,D),title(C,E),sameatitle(D,E)]).

@@ -10,6 +10,7 @@
 :- table scc/2.
 :- table in_scc/2.
 :- table path/3.
+:- table edge/2.
 
 node(Xs) :-
 	scc(Xs).

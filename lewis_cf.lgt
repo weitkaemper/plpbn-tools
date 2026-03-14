@@ -1,5 +1,5 @@
 :- object(lewis_cf(_BN_), instantiates(plp_dsc)).
-:- info([comment is 'A probabilistic logic program under the distribution semantics corresponsing to a Bayesian network.',
+:- info([comment is 'A probabilistic logic program under the distribution semantics corresponding to a Bayesian network.',
 		 remarks is [explanation - 'Implements a probabilistic logic program under the distribution semantics that minimises the distance (Lewis-Williamson heuristic) between real and counterfactual scenarios among all such programs that have the same interventional distributions as the Bayesian network supplied as a parameter.'],
 		parameters is ['BN' - 'A Bayesian network, implementing bnp.'],
 		see_also is [bnp]]).

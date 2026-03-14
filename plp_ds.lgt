@@ -15,21 +15,22 @@
 :- table(all_probrules/1).
 :- endif.
 
-probfact(Head, P) :-
-	probfact(Head, P, _).
+probfact(Term, P) :-
+	all_probrules(PRules),
+    member(N-probrule(Head,P,Body),PRules),
+	probfact_term(Head, Body,N, Term).
 
-probfact(NewTerm,P,N) :-
-    all_probrules(PRules),
-    member(N-probrule(H,P,B),PRules),
+probfact_term(Head,Body,N,NewTerm) :-
 	atom_concat('u_',N,NewFunc),
-	term_variables(probrule(H,P,B), Vars),
+	term_variables(Head-Body, Vars),
 	NewTerm =.. [NewFunc|Vars].
 
 
-detrule(Head, [Term|Body]) :-
+detrule(Head, BodyTerm) :-
     all_probrules(PRules),
     member(N-probrule(Head,_,Body),PRules),
-	probfact(Term,_,N).
+	probfact_term(Head,Body,N,Term),
+	append(Body,[Term],BodyTerm).
 
 create_entity :-
 	::create_entity(ds(_PLP_)).
@@ -85,14 +86,14 @@ conj_to_list(A, [A]).
 :- table(rule_from_clause/3).
 :- endif.
 
-probfact(Head, P) :-
-	probfact(Head, P, _).
+probfact(Term, P) :-
+	plp_from_file(PRules,_),
+    nth1(N,PRules,probrule(Head,P,Body)),
+	probfact_term(Head, Body,N, Term).
 
-probfact(NewTerm,P,N) :-
-    plp_from_file(PRules,_),
-    nth1(N,PRules,probrule(H,P,B)),
+probfact_term(Head,Body,N,NewTerm) :-
 	atom_concat('u_',N,NewFunc),
-	term_variables(probrule(H,P,B), Vars),
+	term_variables(Head-Body, Vars),
 	NewTerm =.. [NewFunc|Vars].
 
 detrule(Head, Body) :-
@@ -100,10 +101,11 @@ detrule(Head, Body) :-
 	member(Clause,DRules),
 	rule_from_clause(Clause, Head, Body).
 
-detrule(Head, [Term|Body]) :-
+detrule(Head, BodyTerm) :-
 	plp_from_file(PRules,_),
     nth1(N,PRules,probrule(Head,_,Body)),
-	probfact(Term,_,N).
+	probfact_term(Head,Body,N,Term),
+	append(Body,[Term],BodyTerm).
 
 create_entity :-
     decompose_file_name(_File_, _, Name, _),

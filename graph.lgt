@@ -79,4 +79,69 @@ oriented_edge(X,Y) :-
 :- end_object.
 
 
+:- object(graph_ds(_PLP_), implements(graphp)).
 
+:- info([
+	   comment is 'dependency graph induced by a ground PLP in the distribution semantics.',
+	   parameters is ['PLP' - 'A ground probabilistic logic program in the distribution semantics, conforming to plp_dsp.'],
+	   see_also is [plp_dsp, plp_ds(_,_)]]).
+
+
+
+:- protected(atom_of/2).
+
+:- uses(list, [member/2]).
+
+
+node(N) :-
+	_PLP_::detrule(N,_).
+node(N) :-
+	_PLP_::probfact(N,_).
+
+edge(Y,X) :-
+	_PLP_::detrule(X,Ys),
+	member(YLit,Ys),
+	atom_of(YLit,Y),
+	node(Y).
+
+
+atom_of(\+ A,A).
+atom_of(A, A) :-
+	\+functor(A, (\+),1).
+
+:- end_object.
+
+:- object(graph_lpmln(_LPMLN_), implements(graphp)).
+:- info([
+	   comment is 'Dependency graph induced by a ground LP-MLN program.',
+	   parameters is ['LPMLN' - 'A ground LP-MLN program, implementing lpmlnp.'],
+	   see_also is [lpmlnp]]).
+
+
+:- protected(atom_of/2).
+
+:- uses(list, [member/2]).
+
+
+node(N) :-
+	_LPMLN_::weightrule(N,_,_).
+node(N) :-
+	_LPMLN_::detrule(N,_).
+
+edge(Y,X) :-
+	_LPMLN_::detrule(X,Ys),
+	member(YLit,Ys),
+	atom_of(YLit,Y),
+	node(Y).
+edge(Y,X) :-
+	_LPMLN_::weightrule(X,_,Ys),
+	member(YLit,Ys),
+	atom_of(YLit,Y),
+	node(Y).
+
+
+atom_of(\+ A,A).
+atom_of(A, A) :-
+	\+functor(A, (\+),1).
+
+:- end_object.

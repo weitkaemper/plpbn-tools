@@ -1,8 +1,9 @@
 :- object(entity_writer_util).
-:- public([write_flat/2, write_flat/3, write_object/4, write_object/5, write_protocol/4, write_protocol/3, write_entities/2, write_clauses/2,listbodies_to_clauses/2, write_probfacts/2, create_flat/3]).
+:- public([write_flat/2, write_flat/3, write_object/4, write_object/5, write_protocol/4, write_protocol/3, write_entities/2, write_clauses/2,listbodies_to_clauses/2, write_probfacts/2, write_plingo_problog_probfacts/2, write_plingo_problog_probrules/2, create_flat/3]).
 
 :- uses(format,[format/3]).
 :- uses(list,[length/2,member/2]).
+:- uses(term, [numbervars/1]).
 
 create_flat(Object, Protocol, Identifier) :-
         findall(Fact,
@@ -140,15 +141,17 @@ write_clauses(Stream, [Clause|Rest]) :-
         write_clauses(Stream, Rest).
 
 write_clause(Stream, (Head :- Body)) :-
-        write_term(Stream, Head, [quoted(true)]),
+        numbervars((Head :- Body)),
+        write_term(Stream, Head, [numbervars(true), quoted(true)]),
         write(Stream, ' :-'),
         write_body(Stream, Body, 4),
         write(Stream, '.'),
         nl(Stream),
         nl(Stream).
 write_clause(Stream, Fact) :-
+        numbervars(Fact),
         Fact \= (_ :- _),
-        write_term(Stream, Fact, [quoted(true)]),
+        write_term(Stream, Fact, [numbervars(true), quoted(true)]),
         write(Stream, '.'),
         nl(Stream),
         nl(Stream).
@@ -159,39 +162,88 @@ write_probfacts(Stream,[Probfact|Probfacts]) :-
 write_probfacts(_, []).
 
 write_probfact(Stream, (P :: Fact)) :-
+        numbervars(Fact),
         write(Stream, P),
         write(Stream, ' :: '),
-        write_term(Stream, Fact, [quoted(true)]),
+        write_term(Stream, Fact, [numbervars(true), quoted(true)]),
         write(Stream, '.'),
         nl(Stream),
         nl(Stream).
 
+write_plingo_problog_probfacts(Stream,[Probfact|Probfacts]) :-
+        write_plingo_problog_probfact(Stream, Probfact),
+        write_plingo_problog_probfacts(Stream, Probfacts).
+write_plingo_problog_probfacts(_, []).
+
+write_plingo_problog_probfact(Stream, Fact-ProbString) :-
+        numbervars(Fact),
+        write_term(Stream, Fact, [numbervars(true), quoted(true)]),
+        write(Stream, ' :- '),
+        write(Stream, '&problog'),
+        write(Stream, ProbString),
+        write(Stream, '.'),
+        nl(Stream),
+        nl(Stream).
+
+write_plingo_problog_probrules(Stream,[Probrule|Probrules]) :-
+        write_plingo_problog_probrule(Stream, Probrule),
+        write_plingo_problog_probrules(Stream, Probrules).
+write_plingo_problog_probrules(_, []).
+
+write_plingo_problog_probrule(Stream, newclause(Head,ProbString,Body)) :-
+        numbervars(newclause(Head,ProbString,Body)),
+        write_term(Stream, Head, [numbervars(true), quoted(true)]),
+        write(Stream, ' :-'),
+        nl(Stream),
+        indent(Stream, 4),
+        write(Stream, '&problog'),
+        write(Stream, ProbString),
+        write(Stream, ', '),
+        list_to_conj(Body,BodyC),
+        write_body(Stream, BodyC, 4),
+        write(Stream, '.'),
+        nl(Stream),
+        nl(Stream).
+
+write_lpmln_probfacts(Stream,[Probfact|Probfacts]) :-
+        write_lpmln_probfact(Stream, Probfact),
+        write_lpmln_probfacts(Stream, Probfacts).
+write_lpmln_probfacts(_, []).
+
+write_lpmln_probfact(Stream, Log-Fact) :-
+        numbervars(Fact),
+        write(Stream, Log),
+        write(Stream, '  '),
+        write_term(Stream, Fact, [numbervars(true), quoted(true)]),
+        write(Stream, '.'),
+        nl(Stream),
+        nl(Stream).
 
 
 % Pretty printer for clause bodies
 write_body(Stream, (A,B), Indent) :-
         nl(Stream),
         indent(Stream, Indent),
-        write_term(Stream, A, [quoted(true)]),
+        write_term(Stream, A, [numbervars(true), quoted(true)]),
         write(Stream, ','),
         write_body(Stream, B, Indent).
 write_body(Stream, (A;B), Indent) :-
         nl(Stream),
         indent(Stream, Indent),
-        write_term(Stream, (A;B), [quoted(true)]).
+        write_term(Stream, (A;B), [numbervars(true), quoted(true)]).
 write_body(Stream, (A->B), Indent) :-
         nl(Stream),
         indent(Stream, Indent),
-        write_term(Stream, (A->B), [quoted(true)]).
+        write_term(Stream, (A->B), [numbervars(true), quoted(true)]).
 write_body(Stream, (\+ A), Indent) :-
         nl(Stream),
         indent(Stream, Indent),
         write(Stream, '\\+ '),
-        write_term(Stream, A, [quoted(true)]).
+        write_term(Stream, A, [numbervars(true), quoted(true)]).
 write_body(Stream, A, Indent) :-
         nl(Stream),
         indent(Stream, Indent),
-        write_term(Stream, A, [quoted(true)]).
+        write_term(Stream, A, [numbervars(true), quoted(true)]).
 
 
 indent(_, 0) :- !.
