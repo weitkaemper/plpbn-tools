@@ -58,3 +58,7 @@ xsblgt -e "[compute_cf], convert('Input.lgt', Output)."
 ```
 (note the period mark, the " and the ' in the command line flag).
 
+### Probabilistic logic programs as Bayesian networks
+
+Probabilistic logic programs (and LP-MLN programs) can be viewed as a Bayesian network on the factor graph of its clause dependency graph with respect to its strongly connected components.
+This is implemented in `causal_bn(_PLP_)`, which implements the protocol `bnp` for categorical Bayesian networks.
