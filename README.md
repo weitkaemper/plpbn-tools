@@ -61,4 +61,7 @@ xsblgt -e "[compute_cf], convert('Input.lgt', Output)."
 ### Probabilistic logic programs as Bayesian networks
 
 Probabilistic logic programs (and LP-MLN programs) can be viewed as a Bayesian network on the factor graph of its clause dependency graph with respect to its strongly connected components.
-This is implemented in `causal_bn(_PLP_)`, which implements the protocol `bnp` for categorical Bayesian networks.
+This is implemented in `causal_bn(_PLP_)`, which implements the protocol `bnp` for discrete Bayesian networks.
+Since in general, a strongly connected component can have more than one stable model, we rely on the answer set solver Clingo to enumerate stable models within a strongly connected component. 
+To interface with Clingo, we use the bridge provided by Jan Wielemaker for SWI-Prolog (https://github.com/JanWielemaker/clingo). 
+As a consequence, `causal_bn(_PLP_)` will only work properly with the SWI-Prolog backend, and with both Clingo and the above-mentioned SWI-Prolog library installed. 
