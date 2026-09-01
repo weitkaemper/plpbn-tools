@@ -1,0 +1,11 @@
+:- object(ex_cyclic_plpds_1, instantiates(plp_dsc)).
+
+probfact(u1,0.5).
+probfact(u2,0.5).
+probfact(u3,0.5).
+
+detrule(b,[u2]).
+detrule(a,[u1]).
+detrule(b,[a,u3]).
+detrule(a,[b,u3]).
+:- end_object.

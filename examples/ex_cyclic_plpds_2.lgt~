@@ -1,0 +1,5 @@
+:- object(ex_cyclic_plpds_2, instantiates(plp_dsc)).
+
+detrule(b,[not(a)]).
+detrule(a,[not(b)]).
+:- end_object.
